@@ -1,0 +1,119 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialContent flexDirection="COLUMN" height="100%"
+		flexJustifyContent="START" overflow="HIDDEN">
+
+		<m:MaterialContent width="calc(100% - 22px)" height="48px"
+			flex="NONE" flexAlignItems="CENTER" flexAlignContent="CENTER"
+			padding="4" paddingLeft="16" paddingRight="6">
+			<m:MaterialLabel text="Colors" textColor="MDC_THEME_ON_SURFACE"
+				flex="ONE" typography="HEADLINE_6" />
+			<m:MaterialIconButton ui:field="close_action" type="CLOSE"
+				textColor="MDC_THEME_ON_SURFACE" fontSize="14pt" width="30px"
+				height="30px" />
+		</m:MaterialContent>
+
+		<m:MaterialDivider />
+
+		<m:MaterialContent flex="ONE" flexDirection="COLUMN"
+			flexWrap="NOWRAP" overflowY="AUTO" marginTop="8">
+
+			<m:MaterialContent width="calc(100% - 48px)"
+				backgroundColor="MDC_THEME_PRIMARY" padding="8" borderRadius="8px"
+				margin="16" marginBottom="4" borderColor="MDC_THEME_ON_PRIMARY"
+				borderWidth="1" borderStyle="SOLID" minHeight="82px" overflow="HIDDEN">
+
+				<m:MaterialLabel text="Primary" typography="BODY_1"
+					textColor="MDC_THEME_ON_PRIMARY" flex="ONE" marginTop="4" />
+
+				<m:MaterialIconButton ui:field="primary__color"
+					type="FORMAT_COLOR_FILL" fontSize="11pt"  width="30px" height="30px"
+					color="MDC_THEME_ON_PRIMARY" />
+
+				<m:MaterialIconButton ui:field="primary__text_color"
+					type="FORMAT_COLOR_TEXT" fontSize="11pt"  width="30px" height="30px"
+					color="MDC_THEME_ON_PRIMARY" />
+
+			</m:MaterialContent>
+
+			<m:MaterialContent width="calc(100% - 48px)"
+				backgroundColor="MDC_THEME_SECONDARY" padding="8" borderRadius="8px"
+				margin="4" marginLeft="16" marginRight="16" borderColor="MDC_THEME_ON_SECONDARY"
+				borderWidth="1" borderStyle="SOLID" minHeight="82px" overflow="HIDDEN">
+
+				<m:MaterialLabel text="Secondary" typography="BODY_1"
+					textColor="MDC_THEME_ON_SECONDARY" flex="ONE" marginTop="4" />
+
+				<m:MaterialIconButton ui:field="secondary__color"
+					type="FORMAT_COLOR_FILL" fontSize="11pt"  width="30px" height="30px"
+					textColor="MDC_THEME_ON_SECONDARY" />
+
+				<m:MaterialIconButton ui:field="secondary__text_color"
+					type="FORMAT_COLOR_TEXT" fontSize="11pt"  width="30px" height="30px"
+					textColor="MDC_THEME_ON_SECONDARY" />
+
+			</m:MaterialContent>
+
+			<m:MaterialContent width="calc(100% - 48px)"
+				backgroundColor="MDC_THEME_SURFACE" padding="8" borderRadius="8px"
+				margin="4" marginLeft="16" marginRight="16" borderColor="MDC_THEME_ON_SURFACE"
+				borderWidth="1" borderStyle="SOLID" minHeight="90px" overflow="HIDDEN">
+
+				<m:MaterialLabel text="Surface" typography="BODY_1"
+					textColor="MDC_THEME_ON_SURFACE" flex="ONE" marginTop="4" />
+
+				<m:MaterialIconButton ui:field="surface__color"
+					type="FORMAT_COLOR_FILL" fontSize="11pt"  width="30px" height="30px"
+					textColor="MDC_THEME_ON_SURFACE" />
+
+				<m:MaterialIconButton ui:field="surface__text_color"
+					type="FORMAT_COLOR_TEXT" fontSize="11pt"  width="30px" height="30px"
+					textColor="MDC_THEME_ON_SURFACE" />
+
+			</m:MaterialContent>
+
+			<m:MaterialContent width="calc(100% - 48px)"
+				backgroundColor="MDC_THEME_BACKGROUND" padding="8" borderRadius="8px"
+				margin="16" marginTop="4" borderColor="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND"
+				borderWidth="1" borderStyle="SOLID" minHeight="168px" overflow="HIDDEN">
+
+				<m:MaterialLabel text="Background" typography="BODY_1"
+					textColor="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND" flex="ONE"
+					marginTop="4" />
+
+				<m:MaterialIconButton ui:field="background__color"
+					type="FORMAT_COLOR_FILL" fontSize="11pt" width="30px" height="30px"
+					textColor="MDC_THEME_TEXT_ICON_ON_BACKGROUND" />
+
+				<m:MaterialIconButton ui:field="background__text_color"
+					type="FORMAT_COLOR_TEXT" fontSize="11pt" width="30px" height="30px"
+					textColor="MDC_THEME_TEXT_ICON_ON_BACKGROUND" />
+
+				<m:MaterialLabel text="Text Primary on Background"
+					typography="BODY_2" textColor="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND"
+					marginTop="8" />
+				<m:MaterialLabel text="Text Secondary on Background"
+					typography="BODY_2" textColor="MDC_THEME_TEXT_SECONDARY_ON_BACKGROUND" />
+				<m:MaterialLabel text="Text Hint on Background"
+					typography="BODY_2" textColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND" />
+				<m:MaterialLabel text="Text Disabled on Background"
+					typography="BODY_2" textColor="MDC_THEME_TEXT_DISABLED_ON_BACKGROUND" />
+				<m:MaterialLabel text="Text Icon on Background"
+					typography="BODY_2" textColor="MDC_THEME_TEXT_ICON_ON_BACKGROUND" />
+
+			</m:MaterialContent>
+		</m:MaterialContent>
+		<m:MaterialDialog ui:field="dialog_color_palette">
+			<m:content>
+				<m:MaterialColorPalette ui:field="color_palette" />
+			</m:content>
+		</m:MaterialDialog>
+
+	</m:MaterialContent>
+
+</ui:UiBinder> 

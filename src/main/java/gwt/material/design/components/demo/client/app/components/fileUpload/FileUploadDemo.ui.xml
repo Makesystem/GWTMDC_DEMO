@@ -1,0 +1,95 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="File Upload" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				cols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+				<m:MaterialCheckbox ui:field="auto_upload_check"
+					text="Auto upload" selected="false" />
+				<m:MaterialCheckbox ui:field="single_file_uploads_check"
+					text="Single file uploads" selected="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				cols="4">
+
+				<m:MaterialTextField ui:field="accept_field"
+					label="Accept" width="100%" />
+
+				<m:MaterialTextField ui:field="max_file_size_field"
+					label="Max File Size" width="100%" inputType="NUMBER" />
+
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				cols="4">
+
+				<m:MaterialTextField ui:field="max_number_of_files_field"
+					label="Max number of files" width="100%" inputType="NUMBER"
+					enabled="false" />
+
+				<m:MaterialTextField ui:field="limit_multi_file_upload_size_field"
+					label="Limit multi file upload size" width="100%" inputType="NUMBER"
+					enabled="false" />
+
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialContent ui:id="drop_zone" width="100%"
+					height="200px" flexAlignContent="CENTER" flexAlignItems="CENTER"
+					flexJustifyContent="CENTER" borderWidth="2" borderStyle="DASHED"
+					borderRadius="ROUNDED" borderColor="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND">
+					<m:MaterialLabel text="Drop your file here"
+						typography="HEADLINE_2" textAlign="CENTER" />
+				</m:MaterialContent>
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialFileUpload ui:field="to_do_tests_element"
+					url="/file_upload" fired="file_input" dropZone="drop_zone" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialButton ui:field="submit" text="submit"
+					type="RAISED" margin="4" />
+				<m:MaterialButton ui:field="abort" text="abort"
+					type="RAISED" margin="4" />
+				<m:MaterialButton ui:id="file_input" text="input"
+					type="RAISED" margin="4" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialList ui:field="files_content" width="100%"
+					borderRadius="ROUNDED" borderColor="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND"
+					borderStyle="SOLID" borderWidth="1" />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

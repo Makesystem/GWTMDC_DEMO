@@ -1,0 +1,61 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Snackbar" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialSnackbar ui:field="standard_snackbar"
+				text="It's a simple snackbar" />
+			<m:MaterialSnackbar ui:field="at_start_snackbar"
+				text="It's a simple snackbar at start" atStart="true" />
+			<m:MaterialSnackbar ui:field="with_action_snackbar" text="It's a simple snackbar" 
+				actionText="UNDO" />
+			<m:MaterialSnackbar ui:field="with_action_on_bottom_snackbar" text="It's a simple snackbar with bottom action" 
+				actionText="UNDO" actionOnBottom="true" />
+			<m:MaterialSnackbar ui:field="with_multiline_snackbar" text="It's a simple snackbar with a largeeeeeee text :)" />
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialButton ui:field="standard_snackbar_action"
+					text="Standard Snackbar" type="RAISED" margin="8" marginLeft="0" />
+				<m:MaterialButton ui:field="at_start_snackbar_action"
+					text="Snackbar at start" type="RAISED" margin="8" marginLeft="0" />
+				<m:MaterialButton ui:field="with_action_action"
+					text="With action" type="RAISED" margin="8" marginLeft="0" />
+				<m:MaterialButton ui:field="with_action_on_bottom_action"
+					text="With action on bottom" type="RAISED" margin="8" marginLeft="0" />
+				<m:MaterialButton ui:field="with_multiline_action"
+					text="With multiline" type="RAISED" margin="8" marginLeft="0" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialCheckbox ui:field="show_fab_check"
+					text="Show FAB" selected="true" />
+				<m:MaterialFab ui:field="fab" icon="ADD" type="FIXED" />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

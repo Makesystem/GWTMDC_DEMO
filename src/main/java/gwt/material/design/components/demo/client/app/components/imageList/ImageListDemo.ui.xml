@@ -1,0 +1,182 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Image List" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialImageList width="100%"
+					withTextProtection="true" gap="16" desktopCols="6" tabletCols="4">
+
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/1.jpg"
+						label="Text label" aspectRatio="ASPECT_3x2">
+						<m:supporting>
+							<m:MaterialIcon type="STAR" />
+						</m:supporting>
+					</m:MaterialImageListItem>
+
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg"
+						label="Image 1" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/3.jpg"
+						label="Image 2" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/4.jpg"
+						label="Image 3" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg"
+						label="Image 4" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/6.jpg"
+						label="Image 5" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/7.jpg"
+						label="Image 6" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/8.jpg"
+						label="Image 7" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/9.jpg"
+						label="Image 8" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/10.jpg"
+						label="Image 9" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/11.jpg"
+						label="Image 10" aspectRatio="ASPECT_3x2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/12.jpg"
+						label="Image 11" aspectRatio="ASPECT_3x2" />
+
+				</m:MaterialImageList>
+			</m:MaterialLayoutCell>
+
+			<!-- Masonry -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Masonry" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialImageList width="100%"
+					withTextProtection="true" masonry="true" padding="16">
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/1.jpg"
+						label="Image 1" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg"
+						label="Image 2" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/3.jpg"
+						label="Image 3" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/4.jpg"
+						label="Image 4" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/5.jpg"
+						label="Image 5" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/6.jpg"
+						label="Image 6" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/7.jpg"
+						label="Image 7" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/8.jpg"
+						label="Image 8" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/6.jpg"
+						label="Image 9" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/10.jpg"
+						label="Image 10" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/1.jpg"
+						label="IMage 11" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/3.jpg"
+						label="Image 12" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/12.jpg"
+						label="Image 13" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/2x3/4.jpg"
+						label="Image 14" />
+					<m:MaterialImageListItem
+						url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/15.jpg"
+						label="Image 15" />
+				</m:MaterialImageList>
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="with_text_protection_check"
+					text="With Text Protection" selected="true" />
+				<m:MaterialCheckbox ui:field="masonry_check"
+					text="Masonry" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4" flexDirection="COLUMN">
+				<m:MaterialTextField ui:field="cols_phone_field"
+					label="Cols on Phone" placeholder="Phone has 4 cols" width="100%"
+					inputType="NUMBER" />
+				<m:MaterialTextField ui:field="gap_phone_field"
+					label="Gap on Phone" width="100%" inputType="NUMBER" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4" flexDirection="COLUMN">
+				<m:MaterialTextField ui:field="cols_tablet_field"
+					label="Cols on Tablet" placeholder="Tablet has 8 cols" width="100%"
+					inputType="NUMBER" />
+				<m:MaterialTextField ui:field="gap_tablet_field"
+					label="Gap on Tablet" width="100%" inputType="NUMBER" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4" flexDirection="COLUMN">
+				<m:MaterialTextField ui:field="cols_desktop_field"
+					label="Cols on Desktop" placeholder="Desktop has 12 cols" width="100%"
+					inputType="NUMBER" />
+				<m:MaterialTextField ui:field="gap_desktop_field"
+					label="Gap on Desktop" width="100%" inputType="NUMBER" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialImageList ui:field="to_do_tests_element"
+					width="100%" withTextProtection="true" />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

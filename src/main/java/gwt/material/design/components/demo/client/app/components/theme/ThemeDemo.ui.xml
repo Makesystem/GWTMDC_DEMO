@@ -1,0 +1,73 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN" marginBottom="24">
+				<m:MaterialLabel text="Theme"
+					typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Font size -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+
+				<m:MaterialLabel ui:field="font_size_label"
+					text="Font size" typography="BODY_2" marginTop="16" />
+
+				<m:MaterialSlider ui:field="font_size_slider"
+					min="50.0" max="200.0" value="100.0" step="10.0"
+					type="DISCRETE_WITH_TICK_MARKERS" />
+
+			</m:MaterialLayoutCell>
+			<!-- Zoom -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+
+				<m:MaterialLabel ui:field="zoom_label" text="Zoom"
+					typography="BODY_2" marginTop="16" />
+
+				<m:MaterialSlider ui:field="zoom_slider" min="50.0"
+					max="200.0" value="100.0" step="10.0"
+					type="DISCRETE_WITH_TICK_MARKERS" />
+
+			</m:MaterialLayoutCell>
+
+			<!-- Rounded border radius -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+
+				<m:MaterialLabel
+					ui:field="rounded_border_radius_label"
+					text="Rounded border radius " typography="BODY_2" marginTop="16" />
+
+				<m:MaterialSlider
+					ui:field="rounded_border_radius_slider" min="0.0" max="24.0"
+					value="4.0" step="2.0" type="DISCRETE_WITH_TICK_MARKERS" />
+
+			</m:MaterialLayoutCell>
+			
+			<m:MaterialLayoutCell cols="6"
+				flexDirection="COLUMN">			
+				 <m:MaterialDatePicker />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

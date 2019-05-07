@@ -1,0 +1,111 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN" marginBottom="24">
+				<m:MaterialLabel text="Menu" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+
+				<m:MaterialMenuAnchor margin="8">
+					<m:MaterialButton ui:id="standard_menu"
+						text="Menu with checkbox" type="RAISED" />
+
+					<m:MaterialMenu closeOnClick="false"
+						toggler="standard_menu">
+						<m:MaterialListItem text="Item 1" />
+						<m:MaterialListItem text="Item 2" />
+						<m:MaterialListItem text="Item 3" />
+					</m:MaterialMenu>
+				</m:MaterialMenuAnchor>
+				
+				<m:MaterialMenuAnchor margin="8">
+					<m:MaterialButton ui:id="check_menu"
+						text="Menu with checkbox" type="RAISED" />
+
+					<m:MaterialMenu closeOnClick="false"
+						toggler="check_menu">
+						<m:MaterialListItem text="Item 1">
+							<m:start prevent="true">
+								<m:MaterialCheckbox />
+							</m:start>
+						</m:MaterialListItem>
+						<m:MaterialListItem text="Item 2">
+							<m:start prevent="true">
+								<m:MaterialCheckbox />
+							</m:start>
+						</m:MaterialListItem>
+						<m:MaterialListItem text="Item 3">
+							<m:start prevent="true">
+								<m:MaterialCheckbox />
+							</m:start>
+						</m:MaterialListItem>
+					</m:MaterialMenu>
+				</m:MaterialMenuAnchor>
+
+				<m:MaterialMenuAnchor margin="8">
+					<m:MaterialButton ui:id="radio_menu"
+						text="Menu with radio button" type="RAISED" />
+
+					<m:MaterialMenu closeOnClick="false"
+						toggler="radio_menu">
+						<m:MaterialListItem text="Item 1">
+							<m:start prevent="true">
+								<m:MaterialRadioButton name="radio" />
+							</m:start>
+						</m:MaterialListItem>
+						<m:MaterialListItem text="Item 2">
+							<m:start prevent="true">
+								<m:MaterialRadioButton name="radio" />
+							</m:start>
+						</m:MaterialListItem>
+						<m:MaterialListItem text="Item 3">
+							<m:start prevent="true">
+								<m:MaterialRadioButton name="radio" />
+							</m:start>
+						</m:MaterialListItem>
+					</m:MaterialMenu>
+				</m:MaterialMenuAnchor>
+
+				<m:MaterialMenuAnchor margin="8">
+					<m:MaterialButton ui:id="icon_menu"
+						text="Menu with icon button" type="RAISED" />
+
+					<m:MaterialMenu closeOnClick="true"
+						toggler="icon_menu">
+						<m:MaterialListItem text="Item 1"
+							icon="FOLDER_OPEN" />
+						<m:MaterialListItem text="Item 2" icon="SAVE" />
+						<m:MaterialListItem text="Item 3"
+							icon="EXIT_TO_APP" />
+					</m:MaterialMenu>
+				</m:MaterialMenuAnchor>
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

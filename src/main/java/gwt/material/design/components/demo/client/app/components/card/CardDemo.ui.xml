@@ -1,0 +1,220 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Card" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+
+				<m:MaterialCard width="100%" aspectRatio="ASPECT_1x1"
+					title="Aspect 1x1"
+					url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg">
+
+					<m:content>
+						<m:html.Div padding="16">
+							<m:MaterialLabel text="Our Changing Planet"
+								typography="HEADLINE_6" />
+							<m:MaterialLabel text="by Kurt Wagner"
+								typography="SUBTITLE_2" />
+							<m:MaterialLabel
+								text="Visit ten places on our planet that are undergoing the biggest changes today."
+								typography="BODY_2" />
+						</m:html.Div>
+					</m:content>
+					<m:button>
+						<m:MaterialButton text="OPEN" type="RAISED" />
+					</m:button>
+				</m:MaterialCard>
+
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialCard width="100%">
+
+					<m:content>
+						<m:html.Div padding="16">
+							<m:MaterialLabel text="Our Changing Planet"
+								typography="HEADLINE_6" />
+							<m:MaterialLabel text="by Kurt Wagner"
+								typography="SUBTITLE_2" />
+							<m:MaterialLabel
+								text="Visit ten places on our planet that are undergoing the biggest changes today."
+								typography="BODY_2" />
+						</m:html.Div>
+					</m:content>
+					<m:button>
+						<m:MaterialButton text="READ" />
+					</m:button>
+					<m:icon>
+						<m:MaterialIconToggle toggleOn="FAVORITE"
+							toggleOff="FAVORITE_BORDER" selected="true" colorOn="RED"
+							colorOff="GRAY" />
+					</m:icon>
+					<m:icon>
+						<m:MaterialIconButton type="MORE_VERT" />
+					</m:icon>
+				</m:MaterialCard>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Outline" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+
+				<m:MaterialCard width="100%" aspectRatio="ASPECT_1x1"
+					title="Aspect 1x1"
+					url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg"
+					outline="true">
+
+					<m:content>
+						<m:html.Div padding="16">
+							<m:MaterialLabel text="Our Changing Planet"
+								typography="HEADLINE_6" />
+							<m:MaterialLabel text="by Kurt Wagner"
+								typography="SUBTITLE_2" />
+							<m:MaterialLabel
+								text="Visit ten places on our planet that are undergoing the biggest changes today."
+								typography="BODY_2" />
+						</m:html.Div>
+					</m:content>
+					<m:button>
+						<m:MaterialButton text="OPEN" type="RAISED" />
+					</m:button>
+				</m:MaterialCard>
+
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialCard width="100%" outline="true">
+
+					<m:content>
+						<m:html.Div padding="16">
+							<m:MaterialLabel text="Our Changing Planet"
+								typography="HEADLINE_6" />
+							<m:MaterialLabel text="by Kurt Wagner"
+								typography="SUBTITLE_2" />
+							<m:MaterialLabel
+								text="Visit ten places on our planet that are undergoing the biggest changes today."
+								typography="BODY_2" />
+						</m:html.Div>
+					</m:content>
+					<m:button>
+						<m:MaterialButton text="READ" />
+					</m:button>
+					<m:icon>
+						<m:MaterialIconToggle toggleOn="FAVORITE"
+							toggleOff="FAVORITE_BORDER" selected="true" colorOn="RED"
+							colorOff="GRAY" />
+					</m:icon>
+					<m:icon>
+						<m:MaterialIconButton type="MORE_VERT" />
+					</m:icon>
+				</m:MaterialCard>
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+				<m:MaterialCheckbox ui:field="outline_check"
+					text="Outline" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialSelect ui:field="aspect_ratio_select"
+					label="Aspect Radio" width="100%" />
+			</m:MaterialLayoutCell>
+			
+			<m:MaterialLayoutCell cols="12" />
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialCard width="100%" ui:field="to_do_tests_element">
+					<m:content>
+						<m:html.Div padding="16">
+							<m:MaterialLabel text="Our Changing Planet"
+								typography="HEADLINE_6" />
+							<m:MaterialLabel text="by Kurt Wagner"
+								typography="SUBTITLE_2" />
+							<m:MaterialLabel
+								text="Visit ten places on our planet that are undergoing the biggest changes today."
+								typography="BODY_2" />
+						</m:html.Div>
+					</m:content>
+					<m:button>
+						<m:MaterialButton text="READ" />
+					</m:button>
+					<m:icon>
+						<m:MaterialIconToggle toggleOn="FAVORITE"
+							toggleOff="FAVORITE_BORDER" selected="true" colorOn="RED"
+							colorOff="GRAY" />
+					</m:icon>
+					<m:icon>
+						<m:MaterialIconButton type="MORE_VERT" />
+					</m:icon>
+				</m:MaterialCard>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialCard width="100%" ui:field="to_do_tests_element_2"
+					aspectRatio="ASPECT_1x1" title="Aspect 1x1"
+					url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg">
+					<m:content>
+						<m:html.Div padding="16">
+							<m:MaterialLabel text="Our Changing Planet"
+								typography="HEADLINE_6" />
+							<m:MaterialLabel text="by Kurt Wagner"
+								typography="SUBTITLE_2" />
+							<m:MaterialLabel
+								text="Visit ten places on our planet that are undergoing the biggest changes today."
+								typography="BODY_2" />
+						</m:html.Div>
+					</m:content>
+					<m:button>
+						<m:MaterialButton text="OPEN" type="RAISED" />
+					</m:button>
+				</m:MaterialCard>
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

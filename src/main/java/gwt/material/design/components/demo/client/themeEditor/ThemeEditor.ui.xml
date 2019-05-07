@@ -1,0 +1,456 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui"
+	xmlns:c="urn:import:gwt.material.design.components.demo.client.themeEditor">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	.content_::-webkit-scrollbar {
+		display: none;
+	}
+	</ui:style>
+
+	<m:MaterialContent backgroundColor="WHITE" height="100%">
+
+		<!-- Drawer -->
+		<m:MaterialDrawer ui:field="drawer" backgroundColor="WHITE"
+			textColor="BLACK" type="DISMISSIBLE" open="true">
+
+			<!-- Header -->
+			<m:MaterialDrawer.Header>
+				<m:MaterialDrawer.Title text="MDC Theme Editor" />
+				<m:MaterialDrawer.Subtitle text="Choose your colors" />
+			</m:MaterialDrawer.Header>
+
+			<!-- Content -->
+			<m:MaterialDrawer.Content>
+
+				<m:MaterialList>
+					<m:MaterialListItem icon="INBOX" text="Inbox"
+						selected="true" />
+					<m:MaterialListItem icon="STAR" text="Star" />
+					<m:MaterialListItem icon="SEND" text="Send Mail" />
+					<m:MaterialListItem icon="DRAFTS" text="Drafts" />
+				</m:MaterialList>
+
+				<!-- +++++++++++++ -->
+				<!-- Color Palette -->
+				<!-- +++++++++++++ -->
+				<c:misc.ColorPaletteColumn ui:field="color_palette_column" />
+
+			</m:MaterialDrawer.Content>
+
+		</m:MaterialDrawer>
+
+		<m:MaterialDrawerAppContent flex="ONE"
+			height="100%" overflow="AUTO" minWidth="0">
+
+			<!-- Top App Bar -->
+			<m:MaterialTopAppBar type="FIXED" layoutPosition="ABSOLUTE">
+
+				<m:MaterialTopAppBarRow>
+
+					<m:MaterialTopAppBarSection align="START">
+
+						<m:MaterialTopAppBarIcon ui:field="menu_act"
+							type="MENU" />
+						<m:MaterialTopAppBarTitle text="MDC Theme Editor"
+							fontFamily="roboto mono" />
+
+					</m:MaterialTopAppBarSection>
+
+					<m:MaterialTopAppBarSection align="END">
+
+						<m:MaterialMenuAnchor>
+
+							<m:MaterialButton ui:field="menu__open" text="Components"
+								type="OUTLINE" margin="8" tooltip="Select the components" />
+
+							<m:MaterialMenu ui:field="menu" closeOnClick="true">
+								<m:MaterialListItem ui:field="menu_item_components_1"
+									text="Components 1">
+									<m:start>
+										<m:MaterialCheckbox />
+									</m:start>
+								</m:MaterialListItem>
+								<m:MaterialListItem ui:field="menu_item_components_2"
+									text="Components 2">
+									<m:start>
+										<m:MaterialCheckbox />
+									</m:start>
+								</m:MaterialListItem>
+								<m:MaterialListItem ui:field="menu_item_components_3"
+									text="Components 3">
+									<m:start>
+										<m:MaterialCheckbox />
+									</m:start>
+								</m:MaterialListItem>
+								<m:MaterialListItem ui:field="menu_item_charts"
+									text="Charts">
+									<m:start>
+										<m:MaterialCheckbox />
+									</m:start>
+								</m:MaterialListItem>
+								<m:MaterialListItem ui:field="menu_item_icons"
+									text="Icons">
+									<m:start>
+										<m:MaterialCheckbox />
+									</m:start>
+								</m:MaterialListItem>
+								<m:MaterialListItem ui:field="menu_item_date_picker"
+									text="Date picker">
+									<m:start>
+										<m:MaterialCheckbox />
+									</m:start>
+								</m:MaterialListItem>
+							</m:MaterialMenu>
+
+						</m:MaterialMenuAnchor>
+
+						<m:MaterialTopAppBarActionItem type="FILE_DOWNLOAD"
+							ui:field="download_act" />
+						<m:MaterialTopAppBarActionItem
+							ui:field="filter_action" type="FILTER_LIST" />
+					</m:MaterialTopAppBarSection>
+
+				</m:MaterialTopAppBarRow>
+
+			</m:MaterialTopAppBar>
+
+			<m:MaterialContent zIndex="3" padding="8"
+				overflowX="AUTO" marginRight="24" paddingTop="72" flexWrap="NOWRAP"
+				height="calc(100% - 80px)">
+
+				<m:MaterialContent ui:field="components_1"
+					display="NONE" maxWidth="340px" minWidth="340px" height="calc(100% - 20px)"
+					backgroundColor="MDC_THEME_BACKGROUND" borderColor="GRAY"
+					borderWidth="1" borderStyle="SOLID" margin="8">
+
+					<m:MaterialTopAppBar layoutPosition="RELATIVE">
+						<m:MaterialTopAppBarRow>
+							<m:MaterialTopAppBarSection align="START">
+								<m:MaterialTopAppBarIcon type="MENU" />
+								<m:MaterialTopAppBarTitle text="Top bar" />
+							</m:MaterialTopAppBarSection>
+						</m:MaterialTopAppBarRow>
+					</m:MaterialTopAppBar>
+
+					<m:MaterialTabBar ui:field="tab">
+
+						<m:MaterialTab text="Tab 0" />
+						<m:MaterialTab text="Tab 1" />
+						<m:MaterialTab text="Tab 2" />
+
+					</m:MaterialTabBar>
+
+					<m:MaterialFab ui:field="fab" icon="FAVORITE" type="FIXED" display="NONE" />
+
+					<m:MaterialContent width="100%" padding="16"
+						flexDirection="COLUMN" flexAlignItems="END">
+
+						<m:MaterialLabel text="TEXT" typography="HEADLINE_5"
+							width="100%" />
+
+						<m:MaterialLinearProgress progress="0.5"
+							buffer="0.75" width="50%" />
+
+						<m:MaterialCircularProgress ui:field="circular_progress"
+							reverse="true" progress="0.5" />
+
+						<m:MaterialCircularProgress reverse="true"
+							indeterminate="true" />
+
+						<m:MaterialFabProgress icon="ADD"
+							backgroundColor="INDIGO" textColor="WHITE" reverse="true"
+							indeterminate="true" type="MINI" />
+
+						<m:MaterialFabProgress ui:field="fab_progress" type="FIXED"
+							icon="CLOUD_DOWNLOAD" backgroundColor="MDC_THEME_PRIMARY" iconColor="MDC_THEME_ON_PRIMARY" reverse="true" />
+
+						<m:MaterialSlider ui:field="slider" min="0.0"
+							max="100.0" value="50.0" step="10.0" markers="true" width="50%" />
+
+						<m:MaterialCheckbox ui:field="checkbox_1" text="Text"
+							selected="true" />
+
+						<m:html.Div>
+							<m:MaterialRadioButton ui:field="radio_button_1"
+								name="radio_button" text="Text" />
+							<m:MaterialRadioButton ui:field="radio_button_2"
+								name="radio_button" text="Text" selected="true" />
+						</m:html.Div>
+
+						<m:MaterialSwitch ui:field="switch_1" text="Text" />
+
+						<m:MaterialIconToggle ui:field="toggle_1"
+							toggleOn="FAVORITE" toggleOff="FAVORITE_BORDER" selected="true" />
+
+						<m:MaterialChipSet type="CHOICE">
+
+							<m:MaterialChip ui:field="chip_1" text="Chip 1"
+								icon="FACE" closeable="true" type="OUTLINE" />
+							<m:MaterialChip ui:field="chip_2" text="Chip 2"
+								icon="FACE" closeable="true" selected="true" type="OUTLINE" />
+							<m:MaterialChip ui:field="chip_3" text="Chip 3"
+								icon="FACE" closeable="true" type="OUTLINE" />
+
+						</m:MaterialChipSet>
+
+						<m:MaterialIconButton type="FAVORITE" />
+						<m:MaterialButton text="Text" marginBottom="16" />
+						<m:MaterialButton type="UNELEVATED" text="Text"
+							marginBottom="16" />
+						<m:MaterialButton type="OUTLINE" text="Text"
+							marginBottom="16" />
+						<m:MaterialFab ui:field="fab_1" icon="ADD" text="Text"
+							marginBottom="16" type="MIX_WITH_EXTENDED"/>
+
+						<m:MaterialCard width="100%" marginBottom="16"
+							aspectRatio="ASPECT_1x1" title="Aspect 1x1"
+							url="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg">
+
+							<m:content>
+								<m:html.Div padding="16">
+									<m:MaterialLabel text="Our Changing Planet"
+										typography="HEADLINE_6" />
+									<m:MaterialLabel text="by Kurt Wagner"
+										typography="SUBTITLE_2" />
+									<m:MaterialLabel
+										text="Visit ten places on our planet that are undergoing the biggest changes today."
+										typography="BODY_2" />
+								</m:html.Div>
+							</m:content>
+
+							<m:button>
+								<m:MaterialButton text="OPEN" type="RAISED" />
+							</m:button>
+
+						</m:MaterialCard>
+
+						<m:MaterialCard width="100%" marginBottom="16">
+
+							<m:content>
+								<m:html.Div padding="16">
+									<m:MaterialLabel text="Our Changing Planet"
+										typography="HEADLINE_6" />
+									<m:MaterialLabel text="by Kurt Wagner"
+										typography="SUBTITLE_2" />
+									<m:MaterialLabel
+										text="Visit ten places on our planet that are undergoing the biggest changes today."
+										typography="BODY_2" />
+								</m:html.Div>
+							</m:content>
+
+
+							<m:button>
+								<m:MaterialButton text="READ" />
+							</m:button>
+							<m:button>
+								<m:MaterialButton text="BOOKMARKER" type="OUTLINE" />
+							</m:button>
+
+							<m:icon>
+								<m:MaterialIconToggle toggleOn="FAVORITE"
+									toggleOff="FAVORITE_BORDER" selected="true" colorOn="RED"
+									colorOff="GRAY" />
+							</m:icon>
+
+							<m:icon>
+								<m:MaterialIconButton type="MORE_VERT" />
+							</m:icon>
+
+						</m:MaterialCard>
+
+					</m:MaterialContent>
+
+				</m:MaterialContent>
+
+				<m:MaterialContent ui:field="components_2"
+					display="NONE" maxWidth="340px" minWidth="340px" height="calc(100% - 20px)"
+					backgroundColor="MDC_THEME_BACKGROUND" borderColor="GRAY"
+					borderWidth="1" borderStyle="SOLID" margin="8">
+
+					<m:MaterialTopAppBar layoutPosition="RELATIVE">
+						<m:MaterialTopAppBarRow>
+							<m:MaterialTopAppBarSection align="START">
+								<m:MaterialTopAppBarIcon type="MENU" />
+								<m:MaterialTopAppBarTitle text="Top bar" />
+							</m:MaterialTopAppBarSection>
+						</m:MaterialTopAppBarRow>
+					</m:MaterialTopAppBar>
+
+
+					<m:MaterialContent width="100%" padding="16"
+						flexDirection="COLUMN" flexAlignItems="CENTER">
+
+						<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+							borderWidth="1" borderStyle="SOLID" width="100%">
+
+							<m:MaterialListItem ui:field="list_item_1"
+								text="Line item"
+								textSecondary="Secondary text sfbjbfb ejfefjb febf bf b fe ehbfaeh e ebb efk b wekfbefvebfe evfwh">
+								<m:start prevent="true">
+									<m:MaterialCheckbox />
+								</m:start>
+							</m:MaterialListItem>
+							<m:MaterialDivider />
+							<m:MaterialListItem ui:field="list_item_2"
+								text="Line item" textSecondary="Secondary text">
+								<m:start prevent="true">
+									<m:MaterialCheckbox />
+								</m:start>
+							</m:MaterialListItem>
+							<m:MaterialDivider />
+							<m:MaterialListItem ui:field="list_item_3"
+								text="Line item" textSecondary="Secondary text">
+								<m:start prevent="true">
+									<m:MaterialCheckbox />
+								</m:start>
+							</m:MaterialListItem>
+							<m:MaterialDivider />
+							<m:MaterialListItem ui:field="list_item_4"
+								text="Line item" textSecondary="Secondary text">
+								<m:start prevent="true">
+									<m:MaterialRadioButton name="radio" />
+								</m:start>
+							</m:MaterialListItem>
+							<m:MaterialListItem ui:field="list_item_5"
+								text="Line item" textSecondary="Secondary text">
+								<m:start prevent="true">
+									<m:MaterialRadioButton name="radio" />
+								</m:start>
+							</m:MaterialListItem>
+
+						</m:MaterialList>
+
+						<m:MaterialSelect ui:field="select_box" label="Frutas"
+							width="100%" type="SHAPED" marginTop="16">
+							<m:MaterialSelect.Option text="Abacaxi"
+								value="abacaxi" />
+							<m:MaterialSelect.Option text="Banana"
+								value="banana" />
+							<m:MaterialSelect.Option text="Maçã"
+								value="maca" />
+						</m:MaterialSelect>
+
+						<m:MaterialMenuAnchor marginTop="16">
+
+							<m:MaterialButton ui:field="input_type__open"
+								text="Input type" type="OUTLINE" margin="8" tooltip="Select the input type" />
+
+							<m:MaterialMenu ui:field="input_type__menu"
+								closeOnClick="true" />
+
+						</m:MaterialMenuAnchor>
+						<m:MaterialTextField ui:field="input_type__field"
+							label="Text 1" width="100%" />
+						<m:MaterialTextField label="Read only" width="100%"
+							readOnly="true" text="It's a read only text field" />
+						<m:MaterialTextField label="Text 2" type="BOX"
+							required="true" width="100%" inputMask="{vMaskers.date__mask}"
+							validation="{validations.input_mask}" />
+						<m:MaterialTextField label="My label"
+							placeholder="It's a placeholder" type="OUTLINED" width="100%" />
+						<m:MaterialTextField placeholder="It's a placeholder"
+							type="SHAPED" width="100%" dense="true" />
+						<m:MaterialTextField placeholder="Text 4"
+							type="FULLWIDTH" width="100%" />
+						<m:MaterialTextField placeholder="Text 5"
+							type="FULLWIDTH" enabled="false" width="100%" />
+						<m:MaterialTextArea label="Text Area" width="100%" />
+
+					</m:MaterialContent>
+
+				</m:MaterialContent>
+
+				<m:MaterialContent ui:field="components_3"
+					display="NONE" maxWidth="340px" minWidth="340px" height="calc(100% - 20px)"
+					backgroundColor="MDC_THEME_BACKGROUND" borderColor="GRAY"
+					borderWidth="1" borderStyle="SOLID" margin="8">
+
+					<m:MaterialDrawer>
+
+						<!-- Header -->
+						<m:MaterialDrawer.Header>
+
+							<m:MaterialDrawer.Title text="Theme Editor" />
+
+							<m:MaterialChip ui:field="chip_dialog" text="Dialog"
+								type="OUTLINE" marginTop="8" />
+
+
+						</m:MaterialDrawer.Header>
+
+						<m:MaterialDivider />
+
+						<!-- Content -->
+						<m:MaterialDrawer.Content>
+
+							<m:MaterialListGroup>
+
+								<m:MaterialList>
+									<m:MaterialListItem icon="INBOX" text="Inbox"
+										selected="true" />
+									<m:MaterialListItem icon="STAR" text="Star" />
+									<m:MaterialListItem icon="SEND" text="Send Mail" />
+									<m:MaterialListItem icon="DRAFTS" text="Drafts" />
+								</m:MaterialList>
+
+								<m:MaterialDivider />
+
+								<m:MaterialList>
+									<m:MaterialListItem icon="EMAIL" text="All Mail" />
+									<m:MaterialListItem icon="DELETE" text="Trash" />
+									<m:MaterialListItem icon="REPORT" text="Spam" />
+								</m:MaterialList>
+
+							</m:MaterialListGroup>
+
+						</m:MaterialDrawer.Content>
+
+					</m:MaterialDrawer>
+
+
+					<m:html.Div flex="ONE" minWidth="0" height="100%"
+						backgroundColor="MDC_THEME_BACKGROUND" layoutPosition="RELATIVE">
+
+						<m:html.Div width="100%" height="100%" backgroundColor="BLACK"
+							opacity="0.5" layoutPosition="ABSOLUTE" top="0" left="0" />
+						<m:html.Div width="100%" height="64px" backgroundColor="MDC_THEME_PRIMARY" />
+
+					</m:html.Div>
+
+				</m:MaterialContent>
+
+				<c:items.ChartsUi ui:field="charts" visible="false" />
+				<c:items.IconsUi ui:field="icons" visible="false" />
+				<c:items.DateTimeUi ui:field="calendar" visible="false" />
+
+			</m:MaterialContent>
+
+		</m:MaterialDrawerAppContent>
+
+		<m:MaterialSideSheet ui:field="side_sheet">
+			<m:MaterialLabel text="H1" typography="HEADLINE_1" />
+			<m:MaterialLabel text="H2" typography="HEADLINE_2" />
+			<m:MaterialLabel text="H3" typography="HEADLINE_3" />
+			<m:MaterialLabel text="H4" typography="HEADLINE_4" />
+			<m:MaterialLabel text="H5" typography="HEADLINE_5" />
+			<m:MaterialLabel text="H6" typography="HEADLINE_6" />
+
+		</m:MaterialSideSheet>
+
+		<m:MaterialDialog ui:field="dialog_default" title="Get this party started?"
+			acceptText="OK" cancelText="Cencel">
+			<m:content>
+				<m:MaterialLabel text="Turn up the jams and have a good time." />
+			</m:content>
+		</m:MaterialDialog>
+	</m:MaterialContent>
+
+</ui:UiBinder> 

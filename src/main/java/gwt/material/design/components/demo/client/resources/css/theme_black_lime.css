@@ -1,0 +1,75 @@
+:root {
+	/* Blue-Grey 700 */
+  --mdc-theme-primary: #455A64;
+	/* Cyan 500 */
+  --mdc-theme-secondary: #00BCD4;
+  	/* Grey 100 */
+  --mdc-theme-background: #FFF;
+    
+  --mdc-theme-text-primary-on-primary: white;
+  --mdc-theme-text-secondary-on-primary: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-primary: rgba(255, 255, 255, 0.5);  
+  --mdc-theme-text-disabled-on-primary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-primary: rgba(255, 255, 255, 0.5);
+  
+  --mdc-theme-text-primary-on-secondary: white;
+  --mdc-theme-text-secondary-on-secondary: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-secondary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-secondary: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-secondary: rgba(255, 255, 255, 0.5);
+  
+  --mdc-theme-text-primary-on-background: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-background: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-background: rgba(0, 0, 0, 0.2);
+  --mdc-theme-text-disabled-on-background: rgba(0, 0, 0, 0.4);
+  --mdc-theme-text-icon-on-background: rgba(66, 66, 66, 0.38);
+  
+  --mdc-theme-text-primary-on-light: rgba(0, 0, 0, 0.87);
+  --mdc-theme-text-secondary-on-light: rgba(0, 0, 0, 0.54);
+  --mdc-theme-text-hint-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-disabled-on-light: rgba(0, 0, 0, 0.38);
+  --mdc-theme-text-icon-on-light: rgba(0, 0, 0, 0.38);
+  
+  --mdc-theme-text-primary-on-dark: white;
+  --mdc-theme-text-secondary-on-dark: rgba(255, 255, 255, 0.7);
+  --mdc-theme-text-hint-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-disabled-on-dark: rgba(255, 255, 255, 0.5);
+  --mdc-theme-text-icon-on-dark: rgba(255, 255, 255, 0.5);
+      
+  /* ============================== */
+  /* Used only in source code view 	*/
+  /* - MaterialCode 				*/
+  /* - MaterialCodeExample 			*/
+  /* ============================== */
+    
+  --mdc-theme-code-background: rgba(0,0,0,0.0);
+  --mdc-theme-code-color: #333;
+  --mdc-theme-code-token-comment: slategray;
+  --mdc-theme-code-token-prolog: slategray;
+  --mdc-theme-code-token-doctype: slategray;
+  --mdc-theme-code-token-cdata: slategray;
+  --mdc-theme-code-token-punctuation: #999;
+  --mdc-theme-code-token-property: #905;
+  --mdc-theme-code-token-tag: #905;
+  --mdc-theme-code-token-constant: #905;
+  --mdc-theme-code-token-symbol: #905;
+  --mdc-theme-code-token-deleted: #905;
+  --mdc-theme-code-token-boolean: #690;
+  --mdc-theme-code-token-number: #690;
+  --mdc-theme-code-token-selector: #690;
+  --mdc-theme-code-token-attr-name: #690;
+  --mdc-theme-code-token-string: #690;
+  --mdc-theme-code-token-char: #690;
+  --mdc-theme-code-token-builtin: #690;
+  --mdc-theme-code-token-inserted: #690;
+  --mdc-theme-code-token-operator: #a67f59;
+  --mdc-theme-code-token-entity: #a67f59;
+  --mdc-theme-code-token-url: #a67f59;
+  --mdc-theme-code-token-variable: #e90;
+  --mdc-theme-code-token-atrule: #07a;
+  --mdc-theme-code-token-attr-value: #07a;
+  --mdc-theme-code-token-function: #DD4A68;
+  --mdc-theme-code-token-keyword: #07a;
+  --mdc-theme-code-token-regex: #e90;
+  --mdc-theme-code-token-important: #e90;
+}

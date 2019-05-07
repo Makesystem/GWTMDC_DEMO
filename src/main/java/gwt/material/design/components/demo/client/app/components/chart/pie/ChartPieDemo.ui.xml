@@ -1,0 +1,90 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Pie Chart" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+
+			<m:MaterialLayoutCell cols="8" flexDirection="COLUMN"
+				flexAlignItems="START" padding="8">
+
+				<m:MaterialButton ui:field="random_values__button"
+					text="random values" type="RAISED" marginBottom="24" />
+
+				<m:MaterialLabel text="Number of series" />
+				<m:MaterialSlider ui:field="charts__number_of_series__slider"
+					min="1.0" max="26.0" value="4.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS" />
+				<m:MaterialContent>
+					<m:MaterialCheckbox ui:field="charts__reverse_data__checkbox"
+						selected="false" text="Reverse data" />
+					<m:MaterialCheckbox ui:field="charts__show_tooltip__checkbox"
+						selected="false" text="Show tooltip" />
+
+				</m:MaterialContent>
+				<m:MaterialCheckbox ui:field="charts__animated__checkbox"
+					selected="false" text="Animated" />
+				<m:MaterialSlider ui:field="charts__animation_duration__slider"
+					min="100.0" max="1000.0" value="250.0" step="50.0"
+					type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<!-- Specific -->
+
+				<m:MaterialContent ui:field="pie_chart__type__content"
+					width="100%" />
+				<m:MaterialContent ui:field="pie_chart__label_position__content"
+					width="100%" />
+				<m:MaterialContent ui:field="pie_chart__label_direction__content"
+					width="100%" />
+
+				<m:MaterialLabel text="Label offset" marginTop="16" />
+				<m:MaterialSlider ui:field="pie_chart__label_offset__slider"
+					min="0.0" max="48.0" value="0.0" step="2.0" type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<m:MaterialLabel text="Start angle" marginTop="16" />
+				<m:MaterialSlider ui:field="pie_chart__start_angle__slider"
+					min="0.0" max="360.0" value="270.0" step="10.0"
+					type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<m:MaterialLabel text="Donut width" marginTop="16" />
+				<m:MaterialSlider ui:field="pie_chart__donut_width__slider"
+					min="6.0" max="96.0" value="36.0" step="6.0" type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<m:MaterialLabel text="Chart padding" marginTop="16" />
+				<m:MaterialSlider ui:field="pie_chart__chart_padding__slider"
+					min="0.0" max="48.0" value="0.0" step="2.0" type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<m:MaterialContent>
+					<m:MaterialCheckbox ui:field="pie_chart__show_label__checkbox"
+						selected="true" text="Show label" />
+					<m:MaterialCheckbox ui:field="pie_chart__ignore_empty_values__checkbox"
+						selected="false" text="Ignore empty values" />
+				</m:MaterialContent>
+
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="4"
+				flexJustifyContent="CENTER" padding="16">
+				<m:MaterialPieChart ui:field="to_do_tests_element"
+					type="DONUT" marginTop="48" maxWidth="480px" />
+			</m:MaterialLayoutCell>
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

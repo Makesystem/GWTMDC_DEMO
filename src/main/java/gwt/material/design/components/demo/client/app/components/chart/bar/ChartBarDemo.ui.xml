@@ -1,0 +1,151 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Bar Chart" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				flexAlignItems="START" padding="8">
+
+				<m:MaterialLabel text="Number of series" />
+				<m:MaterialSlider ui:field="charts__number_of_series__slider"
+					min="1.0" max="26.0" value="4.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS" />
+				<m:MaterialContent>
+					<m:MaterialCheckbox ui:field="charts__reverse_data__checkbox"
+						selected="false" text="Reverse data" />
+					<m:MaterialCheckbox ui:field="charts__show_tooltip__checkbox"
+						selected="false" text="Show tooltip" />
+
+				</m:MaterialContent>
+				<m:MaterialCheckbox ui:field="charts__animated__checkbox"
+					selected="false" text="Animated" />
+				<m:MaterialSlider ui:field="charts__animation_duration__slider"
+					min="100.0" max="1000.0" value="250.0" step="50.0" type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<!-- Specific -->
+
+				<m:MaterialContent width="100%" padding="16"
+					paddingBottom="0">
+					<m:MaterialCheckbox ui:field="bar_chart__distribute_series__checkbox"
+						selected="false" text="Distribute series" />
+					<m:MaterialCheckbox ui:field="bar_chart__horizontal_bars__checkbox"
+						selected="false" text="Horizontal bars" />
+					<m:MaterialCheckbox ui:field="bar_chart__stack_bars__checkbox"
+						selected="false" text="Stack bars" />
+
+					<m:MaterialLabel text="Series bar distance" width="100%" />
+					<m:MaterialSlider ui:field="bar_chart__series_bar_distance__slider"
+						min="0.0" max="48.0" value="15.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS"
+						width="calc(100% - 32px)" />
+
+				</m:MaterialContent>
+				<m:MaterialContent width="100%" padding="16"
+					paddingTop="0">
+					<m:MaterialCheckbox ui:field="bar_chart__show_bar_label__checkbox"
+						selected="false" text="Show bar label" />
+					<m:MaterialCheckbox ui:field="bar_chart__show_grid_background__checkbox"
+						selected="false" text="Show grid background" />
+				</m:MaterialContent>
+
+				<m:MaterialContent width="100%">
+					<m:MaterialContent padding="16" flex="ONE">
+						<m:MaterialLabel text="Chart padding top" />
+						<m:MaterialSlider ui:field="bar_chart__padding_top__slider"
+							min="0.0" max="48.0" value="15.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS" />
+					</m:MaterialContent>
+					<m:MaterialContent padding="16" flex="ONE">
+						<m:MaterialLabel text="Chart padding right" />
+						<m:MaterialSlider ui:field="bar_chart__padding_right__slider"
+							min="0.0" max="48.0" value="15.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS" />
+					</m:MaterialContent>
+				</m:MaterialContent>
+
+				<m:MaterialContent width="100%">
+					<m:MaterialContent padding="16" flex="ONE">
+						<m:MaterialLabel text="Chart padding bottom" />
+						<m:MaterialSlider ui:field="bar_chart__padding_bottom__slider"
+							min="0.0" max="48.0" value="5.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS" />
+					</m:MaterialContent>
+					<m:MaterialContent padding="16" flex="ONE">
+						<m:MaterialLabel text="Chart padding left" />
+						<m:MaterialSlider ui:field="bar_chart__padding_left__slider"
+							min="0.0" max="48.0" value="10.0" step="1.0" type="DISCRETE_WITH_TICK_MARKERS" />
+					</m:MaterialContent>
+				</m:MaterialContent>
+
+
+				<m:MaterialContent width="100%" padding="16">
+					<m:MaterialLabel text="Axis X" width="100%" />
+					<m:MaterialCheckbox ui:field="bar_chart__axis_x_only_integer__checkbox"
+						selected="false" text="Only interge" />
+					<m:MaterialCheckbox ui:field="bar_chart__axis_x_grid__checkbox"
+						selected="true" text="Grid" />
+					<m:MaterialCheckbox ui:field="bar_chart__axis_x_label__checkbox"
+						selected="true" text="Label" />
+					<m:MaterialContent ui:field="bar_chart__axis_x_position__content" />
+					<m:MaterialLabel text="Scale min space" width="100%" />
+					<m:MaterialSlider ui:field="bar_chart__axis_x__scale_min_space__slider"
+						min="0.0" max="48.0" value="20.0" step="2.0" type="DISCRETE_WITH_TICK_MARKERS"
+						width="calc(100% - 32px)" />
+				</m:MaterialContent>
+
+
+				<m:MaterialContent width="100%" padding="16">
+					<m:MaterialLabel text="Axis Y" width="100%" />
+					<m:MaterialCheckbox ui:field="bar_chart__axis_y_only_integer__checkbox"
+						selected="false" text="Only interge" />
+					<m:MaterialCheckbox ui:field="bar_chart__axis_y_grid__checkbox"
+						selected="true" text="Grid" />
+					<m:MaterialCheckbox ui:field="bar_chart__axis_y_label__checkbox"
+						selected="true" text="Label" />
+					<m:MaterialContent ui:field="bar_chart__axis_y_position__content" />
+					<m:MaterialLabel text="Scale min space" width="100%" />
+					<m:MaterialSlider ui:field="bar_chart__axis_y__scale_min_space__slider"
+						min="0.0" max="48.0" value="20.0" step="2.0" type="DISCRETE_WITH_TICK_MARKERS"
+						width="calc(100% - 32px)" />
+				</m:MaterialContent>
+
+				<m:MaterialContent padding="16">
+					<m:MaterialLabel text="High and Low values" width="100%"
+						marginBottom="16" />
+
+					<m:MaterialTextField ui:field="bar_chart__high__textfield"
+						label="High" marginRight="8" />
+
+					<m:MaterialTextField ui:field="bar_chart__low__textfield"
+						label="Low" marginLeft="8" marginRight="8" />
+
+					<m:MaterialTextField ui:field="bar_chart__reference__textfield"
+						label="Reference" marginLeft="8" />
+
+				</m:MaterialContent>
+
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12"
+				flexJustifyContent="CENTER" padding="16">
+				<m:MaterialBarChart ui:field="to_do_tests_element"
+					marginTop="48" />
+			</m:MaterialLayoutCell>
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

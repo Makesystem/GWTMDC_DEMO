@@ -1,0 +1,66 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui"
+	xmlns:demo="urn:import:gwt.material.design.components.demo.client.app.components">
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialContent height="100vh">
+
+		<!-- Drawer -->
+		<m:MaterialDrawer ui:field="drawer" type="DISMISSIBLE" >
+
+			<!-- Header -->
+			<m:MaterialDrawer.Header>
+				<m:MaterialDrawer.Title text="GWT Material Design" />
+				<m:MaterialDrawer.Subtitle text="Choose your colors" />
+			</m:MaterialDrawer.Header>
+
+			<!-- Content -->
+			<m:MaterialDrawer.Content>
+				<m:MaterialList ui:field="items_list" />
+			</m:MaterialDrawer.Content>
+
+		</m:MaterialDrawer>
+
+		<m:MaterialDrawerAppContent height="100%">
+
+			<!-- Top App Bar -->
+			<m:MaterialTopAppBar type="FIXED" layoutPosition="ABSOLUTE">
+
+				<m:MaterialTopAppBarRow>
+
+					<m:MaterialTopAppBarSection align="START">
+						<m:MaterialTopAppBarIcon ui:field="menu_act"
+							type="MENU" />
+						<m:MaterialTopAppBarTitle text="GWT Material Design" />
+					</m:MaterialTopAppBarSection>
+
+					<m:MaterialTopAppBarSection align="END">
+						<m:MaterialTopAppBarActionItem type="FILE_DOWNLOAD"
+							ui:field="download_act" tooltip="Download theme" />
+						<m:MaterialTopAppBarActionItem
+							ui:field="filter_action" type="PALETTE" tooltip="Choose colors" />
+					</m:MaterialTopAppBarSection>
+
+				</m:MaterialTopAppBarRow>
+
+			</m:MaterialTopAppBar>
+
+			<!-- Content -->
+			<m:MaterialContent ui:field="content" marginTop="64"
+				flex="ONE" height="calc(100% - 64px)" overflowY="AUTO" overflowX="HIDDEN">
+				<demo:home.Home ui:field="home" />
+			</m:MaterialContent>
+
+			<m:MaterialSideSheet ui:field="side_sheet">
+				<demo:colorChooser.ColorChooser
+					ui:field="color_chooser" />
+			</m:MaterialSideSheet>
+
+		</m:MaterialDrawerAppContent>
+
+	</m:MaterialContent>
+
+</ui:UiBinder> 

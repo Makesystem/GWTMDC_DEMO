@@ -1,0 +1,65 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui"
+	xmlns:demo="urn:import:gwt.material.design.components.demo.client.app.components">
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialContent>
+
+		<!-- Top App Bar -->
+		<m:MaterialTopAppBar ui:field="appBar">
+
+			<m:MaterialTopAppBarRow>
+
+				<m:MaterialTopAppBarSection align="START">
+					<m:MaterialTopAppBarIcon ui:field="back_act"
+						type="ARROW_BACK" />
+					<m:MaterialTopAppBarTitle text="Drawer Demo" />
+				</m:MaterialTopAppBarSection>
+
+				<m:MaterialTopAppBarSection align="END">
+					<m:MaterialTopAppBarActionItem type="FILE_DOWNLOAD"
+						tooltip="Download theme" />
+					<m:MaterialTopAppBarActionItem type="PALETTE"
+						tooltip="Choose colors" />
+				</m:MaterialTopAppBarSection>
+
+			</m:MaterialTopAppBarRow>
+
+		</m:MaterialTopAppBar>
+
+		<!-- Content -->
+		<m:MaterialContent ui:field="content" padding="8"
+			paddingTop="64" flexDirection="COLUMN">
+
+			<m:MaterialSelect ui:field="type_select" label="Type"
+				width="100%" />
+
+			<m:MaterialLabel marginTop="48"
+				text="
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					" height="100vh"/>
+
+		</m:MaterialContent>
+
+	</m:MaterialContent>
+
+
+</ui:UiBinder> 

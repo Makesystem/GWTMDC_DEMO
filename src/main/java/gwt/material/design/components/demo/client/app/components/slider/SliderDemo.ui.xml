@@ -1,0 +1,87 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Linear Progress" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialSlider min="0.0" max="100.0" value="50.0"
+					step="5.0" />
+			</m:MaterialLayoutCell>
+
+			<!-- Discrete -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Discrete" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialSlider min="0.0" max="100.0" value="50.0"
+					step="5.0" type="DISCRETE" />
+			</m:MaterialLayoutCell>
+
+			<!-- Discrete with Tick Marks -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Discrete with Tick Marks"
+					typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialSlider min="0.0" max="100.0" value="50.0"
+					step="5.0"  type="DISCRETE_WITH_TICK_MARKERS" />
+			</m:MaterialLayoutCell>
+
+			<!-- Enabled -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Enabled" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialSlider min="0.0" max="100.0" value="50.0"
+					step="5.0" type="DISCRETE_WITH_TICK_MARKERS" enabled="false"/>
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				cols="12">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+				<m:MaterialSelect ui:field="type_select" label="Slider type"
+					width="100%" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialSlider ui:field="to_do_tests_element" min="0.0" max="100.0" value="50.0"
+					step="5.0" type="DISCRETE_WITH_TICK_MARKERS"/>
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

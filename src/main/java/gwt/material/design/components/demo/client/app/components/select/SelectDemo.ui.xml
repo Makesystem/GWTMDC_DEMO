@@ -1,0 +1,210 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Select" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Standard" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect enabled="false" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+
+			<!-- Outlined -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Outlined" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect type="OUTLINED" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect type="OUTLINED" enabled="false" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+			
+			<!-- Shape Filled -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Shaped Filled" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect type="SHAPED_FILLED" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect type="SHAPED_FILLED" enabled="false" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+			<!-- Shaped -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Shaped" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect type="SHAPED" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect type="SHAPED" enabled="false" label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialSelect ui:field="type_select" label="Type"
+					width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialSelect ui:field="to_do_tests_element"
+					label="Fruits">
+					<m:MaterialSelect.Option text="Apple"
+						value="apple" />
+					<m:MaterialSelect.Option text="Banana"
+						value="banana" />
+					<m:MaterialSelect.Option text="Beetroot"
+						value="beetroot" />
+					<m:MaterialSelect.Option text="Cherry"
+						value="cherry" />
+					<m:MaterialSelect.Option text="Fig" value="fig" />
+				</m:MaterialSelect>
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

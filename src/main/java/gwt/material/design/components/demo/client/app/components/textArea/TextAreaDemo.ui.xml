@@ -1,0 +1,170 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Text Area" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Standard" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Dense" width="100%"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Disabled" width="100%"
+					enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Disabled"
+					text="It`s a disabled text field" width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Read Only" width="100%"
+					readOnly="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Read Only" width="100%"
+					readOnly="true" text="It`s a read only text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Unbordered" width="100%"
+					unbordered="true" text="It`s a unbordered text field" />
+			</m:MaterialLayoutCell>
+
+
+			<!-- Helper text -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Helper text" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Standard" width="100%"
+					helperText="It's a helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Standard" width="100%"
+					helperTextPersistent="true" helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Disabled" width="100%"
+					enabled="false" helperTextPersistent="true"
+					helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Read Only" width="100%"
+					readOnly="true" text="It`s a read only text field"
+					helperTextPersistent="true" helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextArea label="Unbordered" width="100%"
+					unbordered="true" text="It`s a unbordered text field"
+					helperTextPersistent="true" helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+				<m:MaterialCheckbox ui:field="read_only_check"
+					text="Read only" />
+				<m:MaterialCheckbox ui:field="dense_check" text="Dense" />
+				<m:MaterialCheckbox ui:field="unbordered_check"
+					text="Unbordered" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialTextField ui:field="min_length_field"
+					label="Min length" width="100%" inputType="NUMBER" />
+				<m:MaterialTextField ui:field="max_length_field"
+					label="Max length" width="100%" inputType="NUMBER" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialTextField ui:field="rows_field"
+					label="Rows" width="100%" inputType="NUMBER" />
+				<m:MaterialTextField ui:field="cols_field"
+					label="Columns" width="100%" inputType="NUMBER" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialSelect ui:field="type_select" label="Type"
+					width="100%" marginBottom="16" />
+				<m:MaterialSelect ui:field="validation_select"
+					label="Validation" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialSelect ui:field="resize_select" label="Resize"
+					width="100%" marginBottom="16" />
+
+				<m:MaterialSelect ui:field="state_select" label="State"
+					width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialTextArea ui:field="to_do_tests_element"
+					label="Test" />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

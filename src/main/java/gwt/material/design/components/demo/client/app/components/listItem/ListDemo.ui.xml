@@ -1,0 +1,378 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="List" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item" />
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text " />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text" />
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<!-- Filter -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Filter" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text ">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<!-- Choice -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Choice" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:start>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text ">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:start>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<!-- Avatar -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Avatar" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text "
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text"
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<!-- Icon -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Icon" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item" icon="FACE" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item" icon="FACE" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item" icon="FACE" />
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text " icon="FACE" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text" icon="FACE" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item" icon="FACE" />
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<!-- End datail -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="End Detail" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item">
+						<m:end prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:end>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item">
+						<m:end prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:end>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item">
+						<m:end prevent="true">
+							<m:MaterialRadioButton name="radio" />
+						</m:end>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text ">
+						<m:end prevent="true">
+							<m:MaterialCheckbox />
+						</m:end>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:end prevent="true">
+							<m:MaterialCheckbox />
+						</m:end>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:end prevent="true">
+							<m:MaterialCheckbox />
+						</m:end>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="3"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialList borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND"
+					borderWidth="1" borderStyle="SOLID" width="100%">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text ">
+						<m:end prevent="true">
+							<m:MaterialIconButton type="STAR_BORDER" />
+						</m:end>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:end prevent="true">
+							<m:MaterialIconButton type="STAR_BORDER" />
+						</m:end>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:end prevent="true">
+							<m:MaterialIconButton type="STAR_BORDER" />
+						</m:end>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12" >
+				<m:MaterialList ui:field="to_do_tests_element"
+					borderColor="MDC_THEME_TEXT_HINT_ON_BACKGROUND" borderWidth="1"
+					borderStyle="SOLID" width="100%" maxWidth="560px">
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio_to_do_tests_element" />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialRadioButton name="radio_to_do_tests_element" />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+
+					<m:MaterialListSubheader text="It's a sub-header" />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:start prevent="true">
+							<m:MaterialCheckbox />
+						</m:start>
+					</m:MaterialListItem>
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						avatarUrl="https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/5.jpg" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text" icon="FACE" />
+					<m:MaterialDivider />
+					<m:MaterialListItem text="Line item"
+						textSecondary="Secondary text">
+						<m:end prevent="true">
+							<m:MaterialCheckbox />
+						</m:end>
+					</m:MaterialListItem>
+				</m:MaterialList>
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

@@ -1,0 +1,97 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
+				marginBottom="24">
+				<m:MaterialLabel text="Linear Progress" typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialCircularProgress progress="0.75" />
+			</m:MaterialLayoutCell>
+
+			<!-- Buffered -->
+			<!-- <m:MaterialLayoutCell cols="12" flexDirection="COLUMN"> <m:MaterialLabel 
+				text="Buffered" typography="BODY_1" /> </m:MaterialLayoutCell> <m:MaterialLayoutCell 
+				cols="12"> <m:MaterialCircularProgress progress="0.5" buffer="0.75" /> </m:MaterialLayoutCell> -->
+			<!-- Indeterminate -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Indeterminate" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialCircularProgress
+					indeterminate="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- Reversed -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialLabel text="Reversed" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialCircularProgress progress="0.75"
+					reverse="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+				<m:MaterialCheckbox ui:field="indeterminate_check"
+					text="Indeterminate" />
+				<m:MaterialCheckbox ui:field="reversed_check"
+					text="Reversed" />
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				cols="4">
+
+				<m:MaterialLabel text="Progress" typography="BODY_2"
+					marginTop="16" />
+
+				<m:MaterialSlider ui:field="progress_slider" min="0.0"
+					max="100.0" value="50.0" step="5.0" type="DISCRETE_WITH_TICK_MARKERS" />
+
+				<m:MaterialLabel text="Buffer" typography="BODY_2"
+					marginTop="16" display="NONE" />
+
+				<m:MaterialSlider ui:field="buffer_slider" min="0.0"
+					max="100.0" value="100.0" step="5.0" type="DISCRETE_WITH_TICK_MARKERS" display="NONE" />
+
+			</m:MaterialLayoutCell>
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialCircularProgress ui:field="to_do_tests_element"
+					progress="0.5" />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

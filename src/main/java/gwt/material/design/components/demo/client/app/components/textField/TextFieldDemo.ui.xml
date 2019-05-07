@@ -1,0 +1,603 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.components.client.ui">
+
+	<ui:with field='vMaskers'
+		type='gwt.material.design.components.client.masker.Masker.Defaults' />
+
+	<ui:with field='validations'
+		type='gwt.material.design.components.client.validation.ValidationForTextField' />
+
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialLayoutGrid>
+		<m:MaterialLayoutInner>
+
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN" marginBottom="24">
+				<m:MaterialLabel text="Text Field"
+					typography="HEADLINE_6" />
+				<m:MaterialDivider />
+			</m:MaterialLayoutCell>
+
+			<!-- Standard -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Standard" typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					placeholder="It`s a placeholder" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Dense" width="100%"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Disabled"
+					width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Disabled"
+					text="It`s a disabled text field" width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Read Only"
+					width="100%" readOnly="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Read Only"
+					width="100%" readOnly="true" text="It`s a read only text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Unbordered"
+					width="100%" unbordered="true" text="It`s a unbordered text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Leading icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					width="100%" icon="DELETE" iconPosition="TRAILING"
+					helperText="Trailing icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Dense leading icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					width="100%" icon="DELETE" iconPosition="TRAILING"
+					helperText="Dense trailing icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Required"
+					width="100%" required="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- Helper text -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Helper text"
+					typography="BODY_1" marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					width="100%" helperText="It's a helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Standard"
+					width="100%" helperTextPersistent="true"
+					helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Disabled"
+					width="100%" enabled="false" helperTextPersistent="true"
+					helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Read Only"
+					width="100%" readOnly="true" text="It`s a read only text field"
+					helperTextPersistent="true"
+					helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Unbordered"
+					width="100%" unbordered="true" text="It`s a unbordered text field"
+					helperTextPersistent="true"
+					helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField label="Required"
+					width="100%" required="true" helperTextPersistent="true"
+					helperText="It's a persistent helper text" />
+			</m:MaterialLayoutCell>
+
+			<!-- Shaped Filled -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Shaped Filled"
+					typography="BODY_1" marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="SHAPED_FILLED" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Dense" width="100%" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Disabled" width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Disabled" text="It`s a disabled box text field" width="100%"
+					enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Read Only" width="100%" readOnly="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Read Only" width="100%" readOnly="true"
+					text="It`s a read only box text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Unbordered" width="100%" unbordered="true"
+					text="It`s a unbordered box text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="SHAPED_FILLED" width="100%" icon="FACE"
+					iconPosition="LEADING" helperText="Leading icon"
+					helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="SHAPED_FILLED" width="100%" icon="DELETE"
+					iconPosition="TRAILING" helperText="Trailing icon"
+					helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="SHAPED_FILLED" width="100%" icon="FACE"
+					iconPosition="LEADING" helperText="Dense leading icon"
+					helperTextPersistent="true" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="SHAPED_FILLED" width="100%" icon="DELETE"
+					iconPosition="TRAILING" helperText="Dense trailing icon"
+					helperTextPersistent="true" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED_FILLED"
+					label="Required" width="100%" required="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- OUTLINED -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Outlined" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Outlined" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Dense" width="100%" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Disabled" width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Disabled" text="It`s a disabled Outlined text field"
+					width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Read Only" width="100%" readOnly="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Read Only" width="100%" readOnly="true"
+					text="It`s a read only Outlined text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Unbordered" width="100%" unbordered="true"
+					text="It`s a unbordered Outlined text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Outlined" width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Leading icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Outlined" width="100%" icon="DELETE" iconPosition="TRAILING"
+					helperText="Trailing icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Outlined" width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Dense leading icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Outlined" width="100%" icon="DELETE" iconPosition="TRAILING"
+					helperText="Dense trailing icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="OUTLINED"
+					label="Required" width="100%" required="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- SHAPED -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Shaped" typography="BODY_1"
+					marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Shaped" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED" label="Dense"
+					width="100%" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Disabled" width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Disabled" text="It`s a disabled shaped text field"
+					width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Read Only" width="100%" readOnly="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Read Only" width="100%" readOnly="true"
+					text="It`s a read only shaped text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Unbordered" width="100%" unbordered="true"
+					text="It`s a unbordered shaped text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Shaped" width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Leading icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Shaped" width="100%" icon="DELETE" iconPosition="TRAILING"
+					helperText="Trailing icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Shaped" width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Dense leading icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Shaped" width="100%" icon="DELETE" iconPosition="TRAILING"
+					helperText="Dense trailing icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="SHAPED"
+					label="Required" width="100%" required="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- FULLWIDTH -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Full width"
+					typography="BODY_1" marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Full width" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Dense" width="100%" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Disabled" width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Disabled" text="It`s a disabled full width text field"
+					width="100%" enabled="false" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Read Only" width="100%" readOnly="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Read Only" width="100%" readOnly="true"
+					text="It`s a read only full width text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Unbordered" width="100%" unbordered="true"
+					text="It`s a unbordered full width text field" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Full width" width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Leading icon" helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Full width" width="100%" icon="DELETE"
+					iconPosition="TRAILING" helperText="Trailing icon"
+					helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Full width" width="100%" icon="FACE" iconPosition="LEADING"
+					helperText="Dense leading icon" helperTextPersistent="true"
+					dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Full width" width="100%" icon="DELETE"
+					iconPosition="TRAILING" helperText="Dense trailing icon"
+					helperTextPersistent="true" dense="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField type="FULLWIDTH"
+					label="Required" width="100%" required="true" />
+			</m:MaterialLayoutCell>
+
+			<!-- To Do Tests -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialDivider />
+				<m:MaterialLabel text="Do your tests"
+					typography="BODY_1" marginTop="16" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialTextField ui:field="date_mask_field"
+					label="Date mask" width="100%" inputMask="{vMaskers.date__mask}"
+					helperTextPersistent="true" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel
+					text="Type a mask where 9 is a number, A is letter and S is alphanumeric "
+					typography="BODY_2" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialCheckbox ui:field="enabled_check"
+					text="Enabled" selected="true" />
+				<m:MaterialCheckbox ui:field="require_check"
+					text="Required" />
+				<m:MaterialCheckbox ui:field="read_only_check"
+					text="Read only" />
+				<m:MaterialCheckbox ui:field="dense_check"
+					text="Dense" />
+				<m:MaterialCheckbox ui:field="unbordered_check"
+					text="Unbordered" />
+					<m:MaterialCheckbox
+					ui:field="helper_text_persistent_check"
+					text="Helper text persistent" />
+				<m:MaterialCheckbox
+					ui:field="helper_text_validation_check"
+					text="Helper text validation" selected="true"/>
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialTextField ui:field="min_length_field"
+					label="Min length" width="100%" inputType="NUMBER" />
+
+				<m:MaterialTextField ui:field="max_length_field"
+					label="Max length" width="100%" inputType="NUMBER" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialTextField ui:field="maske_field"
+					label="Maske" placeholder="Type a mask" width="100%" />
+
+				<m:MaterialSelect ui:field="validation_select"
+					label="Validation" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell flexDirection="COLUMN"
+				desktopCols="2" tabletCols="3" phoneCols="4">
+				<m:MaterialSelect ui:field="input_type_select"
+					label="Input type" width="100%" marginBottom="16" />
+
+				<m:MaterialSelect ui:field="type_select"
+					label="Type" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell desktopCols="2"
+				tabletCols="3" phoneCols="4">
+				<m:MaterialSelect ui:field="state_select"
+					label="State" width="100%" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialTextField
+					ui:field="to_do_tests_element" label="Test" width="100%" />
+			</m:MaterialLayoutCell>
+
+		</m:MaterialLayoutInner>
+	</m:MaterialLayoutGrid>
+
+</ui:UiBinder> 

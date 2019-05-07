@@ -1,0 +1,72 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui"
+	xmlns:demo="urn:import:gwt.material.design.components.demo.client.app.components">
+	<ui:style>
+	
+	</ui:style>
+
+	<m:MaterialContent height="100vh">
+
+		<m:MaterialDrawerAppContent height="100%">
+
+			<!-- Top App Bar -->
+			<m:MaterialTopAppBar type="FIXED" layoutPosition="ABSOLUTE">
+
+				<m:MaterialTopAppBarRow>
+
+					<m:MaterialTopAppBarSection align="START">
+						<m:MaterialTopAppBarIcon ui:field="back_act"
+							type="ARROW_BACK" />
+						<m:MaterialTopAppBarTitle text="Side Sheet Demo" />
+					</m:MaterialTopAppBarSection>
+
+					<m:MaterialTopAppBarSection align="END">
+						<m:MaterialTopAppBarActionItem
+							ui:id="filter_action" type="FILTER_LIST" tooltip="Open / Close Side Sheet" />
+					</m:MaterialTopAppBarSection>
+
+				</m:MaterialTopAppBarRow>
+
+			</m:MaterialTopAppBar>
+
+			<!-- Content -->
+			<m:MaterialContent ui:field="content" paddingTop="64"
+				flexDirection="COLUMN" flex="ONE" height="calc(100% - 64px)"
+				overflowY="AUTO" overflowX="HIDDEN">
+
+				<m:MaterialLabel margin="16"
+					text="
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					" />
+			</m:MaterialContent>
+
+			<m:MaterialSideSheet toggler="filter_action">
+				<m:MaterialLabel text="H1" typography="HEADLINE_1" />
+				<m:MaterialLabel text="H2" typography="HEADLINE_2" />
+				<m:MaterialLabel text="H3" typography="HEADLINE_3" />
+				<m:MaterialLabel text="H4" typography="HEADLINE_4" />
+				<m:MaterialLabel text="H5" typography="HEADLINE_5" />
+				<m:MaterialLabel text="H6" typography="HEADLINE_6" />
+			</m:MaterialSideSheet>
+
+		</m:MaterialDrawerAppContent>
+
+	</m:MaterialContent>
+
+</ui:UiBinder> 
