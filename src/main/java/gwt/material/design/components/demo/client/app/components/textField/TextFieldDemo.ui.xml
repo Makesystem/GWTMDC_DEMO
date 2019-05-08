@@ -73,14 +73,14 @@
 
 			<m:MaterialLayoutCell desktopCols="2"
 				tabletCols="3" phoneCols="4">
-				<m:MaterialTextField label="Standard"
+				<m:MaterialTextField ui:field="leading_icon_field" label="Leading icon"
 					width="100%" icon="FACE" iconPosition="LEADING"
 					helperText="Leading icon" helperTextPersistent="true" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell desktopCols="2"
 				tabletCols="3" phoneCols="4">
-				<m:MaterialTextField label="Standard"
+				<m:MaterialTextField ui:field="trailing_icon_field" label="Trailing ico"
 					width="100%" icon="DELETE" iconPosition="TRAILING"
 					helperText="Trailing icon" helperTextPersistent="true" />
 			</m:MaterialLayoutCell>
@@ -304,7 +304,7 @@
 
 			<m:MaterialLayoutCell desktopCols="2"
 				tabletCols="3" phoneCols="4">
-				<m:MaterialTextField type="OUTLINED"
+				<m:MaterialTextField ui:field="outline_leading_icon_field" type="OUTLINED"
 					label="Outlined" width="100%" icon="FACE" iconPosition="LEADING"
 					helperText="Leading icon" helperTextPersistent="true" />
 			</m:MaterialLayoutCell>

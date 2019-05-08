@@ -18,10 +18,12 @@ import com.google.gwt.user.client.ui.Widget;
 import gwt.material.design.components.client.constants.InputType;
 import gwt.material.design.components.client.constants.State;
 import gwt.material.design.components.client.constants.TextFieldType;
+import gwt.material.design.components.client.events.IconClickEvent;
 import gwt.material.design.components.client.events.SelectionEvent;
 import gwt.material.design.components.client.ui.MaterialSelect;
 import gwt.material.design.components.client.ui.MaterialTextField;
 import gwt.material.design.components.client.ui.misc.input.MaterialInput;
+import gwt.material.design.components.client.utils.debug.Console;
 import gwt.material.design.components.client.utils.helper.ObjectHelper;
 import gwt.material.design.components.client.validation.Validation;
 import gwt.material.design.components.client.validation.ValidationForTextField;
@@ -187,5 +189,15 @@ public class TextFieldDemo extends Composite implements DemoPanel<MaterialTextFi
 	@Override
 	public Set<MaterialTextField> getWidgetForTests() {
 		return Arrays.asList(to_do_tests_element).stream().collect(Collectors.toSet());
+	}
+	
+	@UiHandler({"leading_icon_field", "outline_leading_icon_field"})
+	void onIconLeadingEvent(final IconClickEvent event) {
+		Console.log("leading_icon_field");
+	}
+	
+	@UiHandler("trailing_icon_field")
+	void onIconTrailingEvent(final IconClickEvent event) {
+		Console.log("trailing_icon_field");
 	}
 }
