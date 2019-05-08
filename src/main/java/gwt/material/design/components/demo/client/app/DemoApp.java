@@ -58,6 +58,7 @@ import gwt.material.design.components.demo.client.app.components.imageList.Image
 import gwt.material.design.components.demo.client.app.components.layoutGrid.LayoutGridDemo;
 import gwt.material.design.components.demo.client.app.components.leaderLine.LeaderLineDemo;
 import gwt.material.design.components.demo.client.app.components.linearProgress.LinearProgressDemo;
+import gwt.material.design.components.demo.client.app.components.link.LinkDemo;
 import gwt.material.design.components.demo.client.app.components.listItem.ListDemo;
 import gwt.material.design.components.demo.client.app.components.menu.MenuDemo;
 import gwt.material.design.components.demo.client.app.components.multiDatePicker.MultiDatePickerDemo;
@@ -127,6 +128,7 @@ public class DemoApp extends Composite {
 		items_list.add(getItem("Leader Line", event -> setPanel(new LeaderLineDemo())));
 		items_list.add(getItem("List", event -> setPanel(new ListDemo())));
 		items_list.add(getItem("Linear Progress", event -> setPanel(new LinearProgressDemo())));
+		items_list.add(getItem("Link", event -> setPanel(new LinkDemo())));
 		items_list.add(getItem("Menu", event -> setPanel(new MenuDemo())));
 		items_list.add(getItem("Multi Date Picker",	event -> setPanel(new MultiDatePickerDemo())));
 		items_list.add(getItem("Radio", event -> setPanel(new RadioButtonDemo())));

@@ -43,6 +43,7 @@ import gwt.material.design.components.demo.client.app.components.imageList.Image
 import gwt.material.design.components.demo.client.app.components.layoutGrid.LayoutGridDemo;
 import gwt.material.design.components.demo.client.app.components.leaderLine.LeaderLineDemo;
 import gwt.material.design.components.demo.client.app.components.linearProgress.LinearProgressDemo;
+import gwt.material.design.components.demo.client.app.components.link.LinkDemo;
 import gwt.material.design.components.demo.client.app.components.listItem.ListDemo;
 import gwt.material.design.components.demo.client.app.components.menu.MenuDemo;
 import gwt.material.design.components.demo.client.app.components.multiDatePicker.MultiDatePickerDemo;
@@ -104,6 +105,7 @@ public class Home extends Composite implements HasSelectionHandlers<Widget> {
 		content.add(getItem("Leader Line", 			event -> fireSelectEvent(new LeaderLineDemo())));
 		content.add(getItem("List", 				event -> fireSelectEvent(new ListDemo())));
 		content.add(getItem("Linear Progress", 		event -> fireSelectEvent(new LinearProgressDemo())));
+		content.add(getItem("Link", 				event -> fireSelectEvent(new LinkDemo())));
 		content.add(getItem("Menu", 				event -> fireSelectEvent(new MenuDemo())));
 		content.add(getItem("Multi Date Picker",	event -> fireSelectEvent(new MultiDatePickerDemo())));
 		content.add(getItem("Radio", 				event -> fireSelectEvent(new RadioButtonDemo())));

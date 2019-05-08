@@ -67,11 +67,7 @@
 			<scope>test</scope>
 		</dependency>
 
-		<dependency>
-			<groupId>com.github.Makesystem</groupId>
-			<artifactId>GWTMDC</artifactId>
-			<version>dde9557033</version>
-		</dependency>
+		
 
 		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
