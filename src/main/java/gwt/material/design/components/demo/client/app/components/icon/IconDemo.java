@@ -14,7 +14,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.UIObject;
 import com.google.gwt.user.client.ui.Widget;
 
-import gwt.material.design.components.client.constants.CssAttribute;
+import gwt.material.design.components.client.constants.HTMLAttributes;
 import gwt.material.design.components.client.constants.HtmlElements;
 import gwt.material.design.components.client.constants.IconType;
 import gwt.material.design.components.client.events.SelectionEvent;
@@ -72,7 +72,7 @@ public class IconDemo extends Composite {
 	
 	@UiHandler("enabled_check")
 	void onSelectEnabled(final SelectionEvent<Boolean> event) {
-		StyleHelper.setAttribute(content,  HtmlElements.I.getTag(), CssAttribute.DISABLED, !event.getValue() ? Boolean.TRUE.toString() : null);
+		StyleHelper.setAttribute(content,  HtmlElements.I.getTag(), HTMLAttributes.DISABLED, !event.getValue() ? Boolean.TRUE.toString() : null);
 	};
 
 	native void filter(Element element, String child, String text) /*-{
