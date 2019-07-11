@@ -113,7 +113,7 @@ public class FileUploadDemo extends Composite {
 		Console.log("on error: " + event.getDescription());
 
 		final MaterialSnackbar snackbar = new MaterialSnackbar();
-		snackbar.setTimeout(5000);
+		//snackbar.setTimeout(5000);
 		snackbar.setBackgroundColor(Color.MDC_THEME_ERROR);
 		snackbar.setText(event.getDescription());
 		snackbar.open();

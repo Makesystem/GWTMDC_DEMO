@@ -25,6 +25,8 @@ public class SnackbarDemo extends Composite implements DemoPanel<MaterialSnackba
 	@UiField
 	MaterialSnackbar standard_snackbar;
 	@UiField
+	MaterialSnackbar dismiss_snackbar;
+	@UiField
 	MaterialSnackbar at_start_snackbar;
 	@UiField
 	MaterialSnackbar with_action_snackbar;
@@ -40,6 +42,11 @@ public class SnackbarDemo extends Composite implements DemoPanel<MaterialSnackba
 	@UiHandler("standard_snackbar_action")
 	void openStandard(final ClickEvent event) {
 		standard_snackbar.open();
+	}
+	
+	@UiHandler("dismiss_snackbar_action")
+	void openDismiss(final ClickEvent event) {
+		dismiss_snackbar.open();
 	}
 	
 	@UiHandler("at_start_snackbar_action")

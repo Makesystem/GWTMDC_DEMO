@@ -34,8 +34,8 @@
 					<m:MaterialButton ui:id="standard_menu"
 						text="Menu with checkbox" type="RAISED" />
 
-					<m:MaterialMenu closeOnClick="false"
-						toggler="standard_menu">
+					<m:MaterialMenu
+						toggler="standard_menu" quickOpen="true">
 						<m:MaterialListItem text="Item 1" />
 						<m:MaterialListItem text="Item 2" />
 						<m:MaterialListItem text="Item 3" />
@@ -46,7 +46,7 @@
 					<m:MaterialButton ui:id="check_menu"
 						text="Menu with checkbox" type="RAISED" />
 
-					<m:MaterialMenu closeOnClick="false"
+					<m:MaterialMenu
 						toggler="check_menu">
 						<m:MaterialListItem text="Item 1">
 							<m:start prevent="true">
@@ -70,7 +70,7 @@
 					<m:MaterialButton ui:id="radio_menu"
 						text="Menu with radio button" type="RAISED" />
 
-					<m:MaterialMenu closeOnClick="false"
+					<m:MaterialMenu
 						toggler="radio_menu">
 						<m:MaterialListItem text="Item 1">
 							<m:start prevent="true">
@@ -94,7 +94,7 @@
 					<m:MaterialButton ui:id="icon_menu"
 						text="Menu with icon button" type="RAISED" />
 
-					<m:MaterialMenu closeOnClick="true"
+					<m:MaterialMenu
 						toggler="icon_menu">
 						<m:MaterialListItem text="Item 1"
 							icon="FOLDER_OPEN" />
