@@ -29,6 +29,7 @@ import gwt.material.design.components.demo.client.app.components.chart.pie.Chart
 import gwt.material.design.components.demo.client.app.components.checkBox.CheckboxDemo;
 import gwt.material.design.components.demo.client.app.components.chip.ChipDemo;
 import gwt.material.design.components.demo.client.app.components.circularProgress.CircularProgressDemo;
+import gwt.material.design.components.demo.client.app.components.dataTable.DataTableDemo;
 import gwt.material.design.components.demo.client.app.components.datePicker.DatePickerDemo;
 import gwt.material.design.components.demo.client.app.components.dialog.DialogDemo;
 import gwt.material.design.components.demo.client.app.components.drawer.DrawerDemo;
@@ -90,6 +91,7 @@ public class Home extends Composite implements HasSelectionHandlers<Widget> {
 		content.add(getItem("Checkbox", 			event -> fireSelectEvent(new CheckboxDemo())));
 		content.add(getItem("Chips", 				event -> fireSelectEvent(new ChipDemo())));
 		content.add(getItem("Circular Progress",	event -> fireSelectEvent(new CircularProgressDemo())));
+		content.add(getItem("Data Table", 			event -> fireSelectEvent(new DataTableDemo())));
 		content.add(getItem("Date Picker", 			event -> fireSelectEvent(new DatePickerDemo())));
 		content.add(getItem("Dialog", 				event -> fireSelectEvent(new DialogDemo())));
 		content.add(getItem("Drawer", 				event -> fireSelectEvent(new DrawerDemo())));

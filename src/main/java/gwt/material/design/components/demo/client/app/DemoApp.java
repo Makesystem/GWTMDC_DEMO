@@ -44,6 +44,7 @@ import gwt.material.design.components.demo.client.app.components.checkBox.Checkb
 import gwt.material.design.components.demo.client.app.components.chip.ChipDemo;
 import gwt.material.design.components.demo.client.app.components.circularProgress.CircularProgressDemo;
 import gwt.material.design.components.demo.client.app.components.colorChooser.ColorChooser;
+import gwt.material.design.components.demo.client.app.components.dataTable.DataTableDemo;
 import gwt.material.design.components.demo.client.app.components.datePicker.DatePickerDemo;
 import gwt.material.design.components.demo.client.app.components.dialog.DialogDemo;
 import gwt.material.design.components.demo.client.app.components.drawer.DrawerDemo;
@@ -113,6 +114,7 @@ public class DemoApp extends Composite {
 		items_list.add(getItem("Checkbox", event -> setPanel(new CheckboxDemo())));
 		items_list.add(getItem("Chips", event -> setPanel(new ChipDemo())));
 		items_list.add(getItem("Circular Progress", event -> setPanel(new CircularProgressDemo())));
+		items_list.add(getItem("Data Table", event -> setPanel(new DataTableDemo())));
 		items_list.add(getItem("Date Picker", event -> setPanel(new DatePickerDemo())));
 		items_list.add(getItem("Dialog", event -> setPanel(new DialogDemo())));
 		items_list.add(getItem("Drawer", event -> setPanel(new DrawerDemo())));
