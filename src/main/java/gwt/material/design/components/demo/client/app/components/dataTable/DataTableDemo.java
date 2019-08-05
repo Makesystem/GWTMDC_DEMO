@@ -7,6 +7,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
 import gwt.material.design.components.client.ui.MaterialDataTable;
+import gwt.material.design.components.client.ui.MaterialDataTable.Column;
 
 public class DataTableDemo extends Composite {
 	
@@ -26,17 +27,25 @@ public class DataTableDemo extends Composite {
 	protected void onLoad() {
 		super.onLoad();
 		
-		dataTable.setHeader("Column 1", "Column 2", "Column 3", "Column 4", "Column 5");
+		dataTable.setColumns(
+				new Column("Column 0"),
+				new Column("Column 1"),
+				new Column("Column 2"),
+				new Column("Column 3"),
+				new Column("Column 4"));
 		
 		for (int r = 1; r <= 1000; r++) {
 			
-			final String[] row = { "colun 1: " + r, "colun 2: " + r, "colun 3: " + r, "colun 4: " + r,
-					"colun 5: " + r, };
+			final String[] row = { 
+					"colun 0: " + r,
+					"colun 1: " + r, 
+					"colun 2: " + r, 
+					"colun 3: " + r,
+					"colun 4: " + r, };
 			
 			dataTable.addData(row);
 			
 		}
 		
-		dataTable.layout();
 	}
 }
