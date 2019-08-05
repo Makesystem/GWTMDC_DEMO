@@ -43,7 +43,7 @@ public class DataTableDemo extends Composite {
 					"colun 3: " + r,
 					"colun 4: " + r, };
 			
-			dataTable.addData(row);
+			//dataTable.addData(row);
 			
 		}
 		
