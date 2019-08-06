@@ -21,6 +21,6 @@ public class GWTMDCDemo implements EntryPoint {
 		ThemeManager.applyTheme(MaterialThemes.INSTANCE.dark_amber());
 
 		GWT.log("Current Locale: " + LocaleInfo.getCurrentLocale().getLocaleName());
-
+	
 	}
 }
