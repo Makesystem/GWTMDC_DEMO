@@ -8,8 +8,10 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
+import gwt.material.design.components.client.constants.TextAlign;
 import gwt.material.design.components.client.ui.MaterialDataTable;
 import gwt.material.design.components.client.ui.MaterialDataTable.Column;
+import gwt.material.design.components.client.ui.MaterialDataTable.ColumnRender;
 import gwt.material.design.components.client.utils.debug.Console;
 import gwt.material.design.components.client.utils.helper.TimerHelper;
 
@@ -37,7 +39,9 @@ public class DataTableDemo extends Composite {
 	public DataTableDemo() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
+
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void onLoad() {
 		super.onLoad();
@@ -47,25 +51,30 @@ public class DataTableDemo extends Composite {
 		final int columns = 5;
 		final Random random = new Random();
 		
+		if (withRender) {
+			dataTable.setColumns(
+					column("Nome", 	 "calc(100% - 320px)", (data, tupe, row_data, row, column) -> data),
+					column("Nível",  "28px", 			   (data, tupe, row_data, row, column) -> data.substring(3)),
+					column("Media",  "96px", 			   (data, tupe, row_data, row, column) -> data),
+					column("Tempo",  "148px", 			   (data, tupe, row_data, row, column) -> data),
+					column("Estado", "48px", 			   (data, tupe, row_data, row, column) -> data));
+		} else {
+			dataTable.setColumns(
+					column("Nome", 	 "calc(100% - 320px)"), 
+					column("Nome", 	 "calc(100% - 320px)"),
+					column("Nome", 	 "calc(100% - 320px)"), 
+					column("Nome", 	 "calc(100% - 320px)"), 
+					column("Nome", 	 "calc(100% - 320px)"));
+		}
+		
 		setStringData(dataTable, withRender, rows, columns, random);
 		// setObjectData(dataTable, withRender, rows, columns, random);
 	}
 	
-	@SuppressWarnings("unchecked")
 	void setStringData(final MaterialDataTable<String[]> dataTable, final boolean withRender, final int rows,
 			final int columns, final Random random) {
-		if (withRender) {
-			dataTable.setColumns(new Column<String[]>("Nome", (data, tupe, row_data, row, column) -> data),
-					new Column<String[]>("Nível", (data, tupe, row_data, row, column) -> data.substring(3)),
-					new Column<String[]>("Media", (data, tupe, row_data, row, column) -> data),
-					new Column<String[]>("Tempo", (data, tupe, row_data, row, column) -> data),
-					new Column<String[]>("Estado", (data, tupe, row_data, row, column) -> data));
-		} else {
-			dataTable.setColumns(new Column<String[]>("Nome"), new Column<String[]>("Nível"),
-					new Column<String[]>("Media"), new Column<String[]>("Tempo"), new Column<String[]>("Estado"));
-		}
 		
-		TimerHelper.schedule(5000, () -> {
+		TimerHelper.schedule(1000, () -> {
 			
 			final long start = System.currentTimeMillis();
 			
@@ -95,35 +104,10 @@ public class DataTableDemo extends Composite {
 		});
 	}
 	
-	@SuppressWarnings("unchecked")
 	void setObjectData(final MaterialDataTable<Empreendedor> dataTable, final boolean withRender, final int rows,
 			final int columns, final Random random) {
-		if (withRender) {
-			dataTable.setColumns(
-					new Column<Empreendedor>("Nome", (data, type, row_data, row, column) -> row_data.getNome()),
-					new Column<Empreendedor>("Nível", (data, type, row_data, row, column) -> {
-						
-						switch (type) {
-							case FILTER:
-							case SORT:
-								return row_data.getNivel().substring(0, 3);
-							default:
-								return row_data.getNivel().substring(3);
-						}
-						
-					}),
-					new Column<Empreendedor>("Media",
-							(data, type, row_data, row, column) -> String.valueOf(row_data.getMedia())),
-					new Column<Empreendedor>("Tempo",
-							(data, type, row_data, row, column) -> String.valueOf(row_data.getTempo())),
-					new Column<Empreendedor>("Estado", (data, type, row_data, row, column) -> row_data.getEstado()));
-		} else {
-			dataTable.setColumns(new Column<Empreendedor>("Nome"), new Column<Empreendedor>("Nível"),
-					new Column<Empreendedor>("Media"), new Column<Empreendedor>("Tempo"),
-					new Column<Empreendedor>("Estado"));
-		}
 		
-		TimerHelper.schedule(5000, () -> {
+		TimerHelper.schedule(1000, () -> {
 			
 			final long start = System.currentTimeMillis();
 			
@@ -147,6 +131,15 @@ public class DataTableDemo extends Composite {
 			Console.log("Draw objects: " + (end_2 - start_2) + "ms");
 		});
 		
+	}
+		
+	<D> Column<D> column(final String title, final String width) {
+		return column(title, width, null);
+	}
+	
+	<D> Column<D> column(final String title, final String width, final ColumnRender<D> render) {
+		final Column<D> column = new Column<D>(title, width, null, null, true, true, true, null, render);
+		return column;
 	}
 	
 	public class Empreendedor {
