@@ -47,17 +47,17 @@ public class DataTableDemo extends Composite {
 		super.onLoad();
 		
 		final boolean withRender = true;
-		final int rows = 1000;
+		final int rows = 20;
 		final int columns = 5;
 		final Random random = new Random();
 		
 		if (withRender) {
 			dataTable.setColumns(
-					column("Nome", 	 "calc(100% - 320px)", (data, tupe, row_data, row, column) -> data),
-					column("Nível",  "28px", 			   (data, tupe, row_data, row, column) -> data.substring(3)),
+					column("Nome", 	 "calc(100% - 360px)", (data, tupe, row_data, row, column) -> data),
+					column("Nível",  "128px", 			   (data, tupe, row_data, row, column) -> data.substring(3)),
 					column("Media",  "96px", 			   (data, tupe, row_data, row, column) -> data),
-					column("Tempo",  "148px", 			   (data, tupe, row_data, row, column) -> data),
-					column("Estado", "48px", 			   (data, tupe, row_data, row, column) -> data));
+					column("Tempo",  "68px", 			   (data, tupe, row_data, row, column) -> data),
+					column("Estado", "68px", 			   (data, tupe, row_data, row, column) -> data));
 		} else {
 			dataTable.setColumns(
 					column("Nome", 	 "calc(100% - 320px)"), 
