@@ -8,7 +8,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-import gwt.material.design.components.client.constants.TextAlign;
 import gwt.material.design.components.client.ui.MaterialDataTable;
 import gwt.material.design.components.client.ui.MaterialDataTable.Column;
 import gwt.material.design.components.client.ui.MaterialDataTable.ColumnRender;
