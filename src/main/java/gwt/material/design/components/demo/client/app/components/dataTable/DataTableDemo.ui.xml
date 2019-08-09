@@ -25,7 +25,7 @@
 			<m:MaterialLayoutCell cols="12">
 				<m:MaterialDataTable ui:field="dataTable">
 					<m:button>
-						<m:MaterialIconButton type="MORE_VERT" color="MDC_THEME_ON_SURFACE"/>
+						<m:MaterialIconButton ui:field="add_row__act" type="ADD" color="MDC_THEME_ON_SURFACE"/>
 					</m:button>
 				</m:MaterialDataTable>
 			</m:MaterialLayoutCell>

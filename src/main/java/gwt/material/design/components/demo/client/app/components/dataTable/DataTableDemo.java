@@ -3,8 +3,10 @@ package gwt.material.design.components.demo.client.app.components.dataTable;
 import java.util.Random;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -105,7 +107,7 @@ public class DataTableDemo extends Composite {
 			final long end = System.currentTimeMillis();			
 			final long start_2 = System.currentTimeMillis();
 			
-			dataTable.setRows(data);
+			dataTable.setData(data);
 			
 			final long end_2 = System.currentTimeMillis();
 			
@@ -157,7 +159,7 @@ public class DataTableDemo extends Composite {
 			
 			final long start_2 = System.currentTimeMillis();
 			
-			dataTable.setRows(data);
+			dataTable.setData(data);
 			
 			final long end_2 = System.currentTimeMillis();
 			
@@ -236,6 +238,17 @@ public class DataTableDemo extends Composite {
 		public void setEstado(String estado) {
 			this.estado = estado;
 		}
+		
+	}
+	
+	@UiHandler("add_row__act")
+	void addRow(final ClickEvent event) {
+
+		final Random random = new Random();
+		dataTable.addData(new Empreendedor(column_0[random.nextInt(column_0.length)] + " Dynamic",
+				column_1[random.nextInt(column_1.length)], column_2[random.nextInt(column_2.length)],
+				column_3[random.nextInt(column_3.length)], column_4[random.nextInt(column_4.length)]));
+		
 		
 	}
 }
