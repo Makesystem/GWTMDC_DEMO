@@ -62,6 +62,9 @@ public class DataTableDemo extends Composite {
 		final int columns = 5;
 		final Random random = new Random();
 		
+		dataTable.addSelectionHandler(event -> GWT.log("Select: " + event.getValue().length));
+		//dataTable.addSelectionHandler(event -> Arrays.stream(event.getValue()).forEach(item -> GWT.log("Select" + item)));
+		
 		// setStringData(dataTable, withRender, rows, columns, random);
 		setObjectData(dataTable, withRender, rows, columns, random);
 	}
