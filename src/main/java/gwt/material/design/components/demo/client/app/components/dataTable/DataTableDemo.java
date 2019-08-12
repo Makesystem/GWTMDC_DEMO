@@ -1,5 +1,6 @@
 package gwt.material.design.components.demo.client.app.components.dataTable;
 
+import java.util.Collection;
 import java.util.Random;
 
 import com.google.gwt.core.client.GWT;
@@ -11,8 +12,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
 import gwt.material.design.components.client.ui.MaterialDataTable;
-import gwt.material.design.components.client.ui.MaterialDataTable.Column;
-import gwt.material.design.components.client.ui.MaterialDataTable.ColumnRender;
+import gwt.material.design.components.client.ui.MaterialDataTableColumn;
 import gwt.material.design.components.client.utils.debug.Console;
 import gwt.material.design.components.client.utils.helper.TimerHelper;
 
@@ -25,22 +25,10 @@ public class DataTableDemo extends Composite {
 	
 	static final String[] column_0 = { "João Appolinário", "Gilberto Guitti", "Daniel Hoory", "Artur Roberto",
 			"Andrea Freire", "Sérgio Almeida", "Eliezer Pazzine", "Jaqueline Bassani", "Richeli Vargas", };
-	static final String[] column_1 = { 
-			"14_Triplo Diamante Crown", 
-			"13_Triplo Diamante Imperial",
-			"12_Triplo Diamante Royal", 
-			"11_Triplo Diamante Red", 
-			"10_Triplo Diamante Black", 
-			"09_Triplo Diamante",
-			"08_Duplo diamante", 
-			"07_Diamante", 
-			"06_Esmeralda Plus", 
-			"05_Esmeralda", 
-			"04_Rubi Plus", 
-			"03_Rubi",			
-			"02_Elite Plus", 
-			"01_Elite", 
-			"00_Empreendedor", };
+	static final String[] column_1 = { "14_Triplo Diamante Crown", "13_Triplo Diamante Imperial",
+			"12_Triplo Diamante Royal", "11_Triplo Diamante Red", "10_Triplo Diamante Black", "09_Triplo Diamante",
+			"08_Duplo diamante", "07_Diamante", "06_Esmeralda Plus", "05_Esmeralda", "04_Rubi Plus", "03_Rubi",
+			"02_Elite Plus", "01_Elite", "00_Empreendedor", };
 	static final double[] column_2 = { 800000.00, 500000.00, 300000.00, 125000.00, 100000.00, 80000.00, 40000.00,
 			25000.00, 12000.00, 6000.00, 5000.00, 2000.00, 1000.00, 600.00, 100.00, };
 	static final int[] column_3 = { 8, 7, 6, 5, 4, 3, 2, 1, 0 };
@@ -52,21 +40,31 @@ public class DataTableDemo extends Composite {
 	public DataTableDemo() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
-
+	
 	@Override
 	protected void onLoad() {
 		super.onLoad();
 		
 		final boolean withRender = true;
-		final int rows = 20;
+		final int rows = 100;
 		final int columns = 5;
 		final Random random = new Random();
 		
-		dataTable.addSelectionHandler(event -> GWT.log("Select: " + event.getValue().length));
-		//dataTable.addSelectionHandler(event -> Arrays.stream(event.getValue()).forEach(item -> GWT.log("Select" + item)));
+		dataTable.addSelectionHandler(event -> print(event.getValue()));
+		dataTable.addUnselectionHandler(event -> print(event.getValue()));
+		// dataTable.addSelectionHandler(event ->
+		// Arrays.stream(event.getValue()).forEach(item -> GWT.log("Select" + item)));
 		
 		// setStringData(dataTable, withRender, rows, columns, random);
 		setObjectData(dataTable, withRender, rows, columns, random);
+	}
+	
+	void print(final Collection<Empreendedor> values) {
+		if (values != null)
+			for (Empreendedor e : values)
+				if (e != null)
+					GWT.log("" + e.getNome() + "|" + e.getNivel() + "|" + e.getMedia() + "|" + e.getTempo() + "|"
+							+ e.getEstado());
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -74,19 +72,14 @@ public class DataTableDemo extends Composite {
 			final int columns, final Random random) {
 		
 		if (withRender) {
-			dataTable.setColumns(
-					column("Nome", 	 "calc(100% - 360px)", (data, type, row_data, row, column) -> data),
-					column("Nível",  "128px", 			   (data, type, row_data, row, column) -> data.substring(3)),
-					column("Media",  "96px", 			   (data, type, row_data, row, column) -> data),
-					column("Tempo",  "68px", 			   (data, type, row_data, row, column) -> data),
-					column("Estado", "68px", 			   (data, type, row_data, row, column) -> data));
+			dataTable.setColumns(column("Nome", "calc(100% - 360px)", (data, type, row_data, row, column) -> data),
+					column("Nível", "128px", (data, type, row_data, row, column) -> data.substring(3)),
+					column("Media", "96px", (data, type, row_data, row, column) -> data),
+					column("Tempo", "68px", (data, type, row_data, row, column) -> data),
+					column("Estado", "68px", (data, type, row_data, row, column) -> data));
 		} else {
-			dataTable.setColumns(
-					column("Nome", 	 "calc(100% - 360px)"), 
-					column("Nível",  "128px"),
-					column("Media",  "96px"), 
-					column("Tempo",  "68px"), 
-					column("Estado", "68px"));
+			dataTable.setColumns(column("Nome", "calc(100% - 360px)"), column("Nível", "128px"),
+					column("Media", "96px"), column("Tempo", "68px"), column("Estado", "68px"));
 		}
 		
 		TimerHelper.schedule(100, () -> {
@@ -97,8 +90,7 @@ public class DataTableDemo extends Composite {
 			for (int r = 0; r < rows; r++) {
 				final String[] row = {
 						
-						column_0[random.nextInt(column_0.length)], 
-						column_1[random.nextInt(column_1.length)],
+						column_0[random.nextInt(column_0.length)], column_1[random.nextInt(column_1.length)],
 						String.valueOf(column_2[random.nextInt(column_2.length)]),
 						String.valueOf(column_3[random.nextInt(column_3.length)]),
 						column_4[random.nextInt(column_4.length)] };
@@ -107,7 +99,7 @@ public class DataTableDemo extends Composite {
 				
 			}
 			
-			final long end = System.currentTimeMillis();			
+			final long end = System.currentTimeMillis();
 			final long start_2 = System.currentTimeMillis();
 			
 			dataTable.setData(data);
@@ -125,25 +117,21 @@ public class DataTableDemo extends Composite {
 		
 		if (withRender) {
 			dataTable.setColumns(
-					column("Nome", 	 "calc(100% - 420px)", (data, type, row_data, row, column) -> row_data.getNome()),
-					column("Nível",  "188px", 			   (data, type, row_data, row, column) -> {
-						switch(type) {
-						case SORT:
-							return row_data.getNivel();
-						default:
-							return row_data.getNivel().substring(3);
+					column("Nome", "calc(100% - 488px)", (data, type, row_data, row, column) -> row_data.getNome()),
+					column("Nível", "188px", (data, type, row_data, row, column) -> {
+						switch (type) {
+							case SORT:
+								return row_data.getNivel();
+							default:
+								return row_data.getNivel().substring(3);
 						}
 					}),
-					column("Media",  "96px", 			   (data, type, row_data, row, column) -> String.valueOf(row_data.getMedia())),
-					column("Tempo",  "68px", 			   (data, type, row_data, row, column) -> String.valueOf(row_data.getTempo())),
-					column("Estado", "68px", 			   (data, type, row_data, row, column) -> row_data.getEstado()));
+					column("Media", "96px", (data, type, row_data, row, column) -> String.valueOf(row_data.getMedia())),
+					column("Tempo", "68px", (data, type, row_data, row, column) -> String.valueOf(row_data.getTempo())),
+					column("Estado", "68px", (data, type, row_data, row, column) -> row_data.getEstado()));
 		} else {
-			dataTable.setColumns(
-					column("Nome", 	 "calc(100% - 420px)"), 
-					column("Nível",  "188px"),
-					column("Media",  "96px"), 
-					column("Tempo",  "68px"), 
-					column("Estado", "68px"));
+			dataTable.setColumns(column("Nome", "calc(100% - 420px)"), column("Nível", "188px"),
+					column("Media", "96px"), column("Tempo", "68px"), column("Estado", "68px"));
 		}
 		
 		TimerHelper.schedule(100, () -> {
@@ -171,13 +159,16 @@ public class DataTableDemo extends Composite {
 		});
 		
 	}
-		
-	<D> Column<D> column(final String title, final String width) {
+	
+	<D> MaterialDataTableColumn<D> column(final String title, final String width) {
 		return column(title, width, null);
 	}
 	
-	<D> Column<D> column(final String title, final String width, final ColumnRender<D> render) {
-		final Column<D> column = new Column<D>(title, width, null, null, true, true, true, null, render);
+	<D> MaterialDataTableColumn<D> column(final String title, final String width, final MaterialDataTableColumn.Render<D> render) {
+		final MaterialDataTableColumn<D> column = new MaterialDataTableColumn<>();
+		column.setTitle(title);
+		column.setWidth(width);
+		column.setRender(render);
 		return column;
 	}
 	
@@ -246,12 +237,11 @@ public class DataTableDemo extends Composite {
 	
 	@UiHandler("add_row__act")
 	void addRow(final ClickEvent event) {
-
+		
 		final Random random = new Random();
-		dataTable.addData(new Empreendedor(column_0[random.nextInt(column_0.length)] + " Dynamic",
+		dataTable.addData(new Empreendedor("_" + column_0[random.nextInt(column_0.length)] + " Dynamic",
 				column_1[random.nextInt(column_1.length)], column_2[random.nextInt(column_2.length)],
 				column_3[random.nextInt(column_3.length)], column_4[random.nextInt(column_4.length)]));
-		
 		
 	}
 }
