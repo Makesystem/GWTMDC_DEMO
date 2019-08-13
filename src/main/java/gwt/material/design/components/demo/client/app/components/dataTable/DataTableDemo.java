@@ -11,6 +11,7 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
+import gwt.material.design.components.client.constants.CssName;
 import gwt.material.design.components.client.ui.MaterialDataTable;
 import gwt.material.design.components.client.ui.MaterialDataTableColumn;
 import gwt.material.design.components.client.utils.debug.Console;
@@ -46,7 +47,7 @@ public class DataTableDemo extends Composite {
 		super.onLoad();
 		
 		final boolean withRender = true;
-		final int rows = 100;
+		final int rows = 10;
 		final int columns = 5;
 		final Random random = new Random();
 		
@@ -68,56 +69,13 @@ public class DataTableDemo extends Composite {
 	}
 	
 	@SuppressWarnings("unchecked")
-	void setStringData(final MaterialDataTable<String[]> dataTable, final boolean withRender, final int rows,
-			final int columns, final Random random) {
-		
-		if (withRender) {
-			dataTable.setColumns(column("Nome", "calc(100% - 360px)", (data, type, row_data, row, column) -> data),
-					column("Nível", "128px", (data, type, row_data, row, column) -> data.substring(3)),
-					column("Media", "96px", (data, type, row_data, row, column) -> data),
-					column("Tempo", "68px", (data, type, row_data, row, column) -> data),
-					column("Estado", "68px", (data, type, row_data, row, column) -> data));
-		} else {
-			dataTable.setColumns(column("Nome", "calc(100% - 360px)"), column("Nível", "128px"),
-					column("Media", "96px"), column("Tempo", "68px"), column("Estado", "68px"));
-		}
-		
-		TimerHelper.schedule(100, () -> {
-			
-			final long start = System.currentTimeMillis();
-			
-			final String[][] data = new String[rows][5];
-			for (int r = 0; r < rows; r++) {
-				final String[] row = {
-						
-						column_0[random.nextInt(column_0.length)], column_1[random.nextInt(column_1.length)],
-						String.valueOf(column_2[random.nextInt(column_2.length)]),
-						String.valueOf(column_3[random.nextInt(column_3.length)]),
-						column_4[random.nextInt(column_4.length)] };
-				
-				data[r] = row;
-				
-			}
-			
-			final long end = System.currentTimeMillis();
-			final long start_2 = System.currentTimeMillis();
-			
-			dataTable.setData(data);
-			
-			final long end_2 = System.currentTimeMillis();
-			
-			Console.log("Create objects: " + (end - start) + "ms");
-			Console.log("Draw objects: " + (end_2 - start_2) + "ms");
-		});
-	}
-	
-	@SuppressWarnings("unchecked")
 	void setObjectData(final MaterialDataTable<Empreendedor> dataTable, final boolean withRender, final int rows,
 			final int columns, final Random random) {
 		
 		if (withRender) {
-			dataTable.setColumns(
-					column("Nome", "calc(100% - 420px)", (data, type, row_data, row, column) -> row_data.getNome()),
+			dataTable.setColumns(checkboxColumn(),
+					column("Nome", "calc(100% - 468px)",
+							(data, type, row_data, row, column) -> row_data.getNome()),
 					column("Nível", "188px", (data, type, row_data, row, column) -> {
 						switch (type) {
 							case SORT:
@@ -126,8 +84,10 @@ public class DataTableDemo extends Composite {
 								return row_data.getNivel().substring(3);
 						}
 					}),
-					column("Media", "96px", (data, type, row_data, row, column) -> String.valueOf(row_data.getMedia())),
-					column("Tempo", "68px", (data, type, row_data, row, column) -> String.valueOf(row_data.getTempo())),
+					column("Media", "96px",
+							(data, type, row_data, row, column) -> String.valueOf(row_data.getMedia())),
+					column("Tempo", "68px",
+							(data, type, row_data, row, column) -> String.valueOf(row_data.getTempo())),
 					column("Estado", "68px", (data, type, row_data, row, column) -> row_data.getEstado()));
 		} else {
 			dataTable.setColumns(column("Nome", "calc(100% - 420px)"), column("Nível", "188px"),
@@ -160,15 +120,26 @@ public class DataTableDemo extends Composite {
 		
 	}
 	
-	<D> MaterialDataTableColumn<D> column(final String title, final String width) {
+	MaterialDataTableColumn<Empreendedor> column(final String title, final String width) {
 		return column(title, width, null);
 	}
 	
-	<D> MaterialDataTableColumn<D> column(final String title, final String width, final MaterialDataTableColumn.Render<D> render) {
-		final MaterialDataTableColumn<D> column = new MaterialDataTableColumn<>();
+	MaterialDataTableColumn<Empreendedor> column(final String title, final String width,
+			final MaterialDataTableColumn.Render<Empreendedor> render) {
+		final MaterialDataTableColumn<Empreendedor> column = new MaterialDataTableColumn<>();
 		column.setTitle(title);
 		column.setWidth(width);
 		column.setRender(render);
+		return column;
+	}
+	
+	MaterialDataTableColumn<Empreendedor> checkboxColumn() {
+		final MaterialDataTableColumn<Empreendedor> column = new MaterialDataTableColumn<>();
+		column.setWidth("48px");
+		column.setClassName(CssName.MDC_DATA_TABLE__SELECT__CHECKBOX);
+		column.setOrderable(false);
+		column.setSearchable(false);
+		column.setRender((data, type, row_data, row, col) -> "");
 		return column;
 	}
 	
