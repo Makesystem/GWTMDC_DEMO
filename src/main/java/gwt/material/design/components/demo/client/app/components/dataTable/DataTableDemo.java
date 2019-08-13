@@ -117,7 +117,7 @@ public class DataTableDemo extends Composite {
 		
 		if (withRender) {
 			dataTable.setColumns(
-					column("Nome", "calc(100% - 488px)", (data, type, row_data, row, column) -> row_data.getNome()),
+					column("Nome", "calc(100% - 420px)", (data, type, row_data, row, column) -> row_data.getNome()),
 					column("Nível", "188px", (data, type, row_data, row, column) -> {
 						switch (type) {
 							case SORT:
