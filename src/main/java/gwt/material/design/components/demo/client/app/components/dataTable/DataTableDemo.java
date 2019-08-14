@@ -11,11 +11,9 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-import gwt.material.design.components.client.constants.CssName;
 import gwt.material.design.components.client.ui.MaterialDataTable;
-import gwt.material.design.components.client.ui.MaterialDataTableColumn;
-import gwt.material.design.components.client.utils.debug.Console;
-import gwt.material.design.components.client.utils.helper.TimerHelper;
+import gwt.material.design.components.client.ui.options.DataTableOptions;
+import gwt.material.design.components.client.ui.options.DataTableOptions.Column;
 
 public class DataTableDemo extends Composite {
 	
@@ -68,32 +66,50 @@ public class DataTableDemo extends Composite {
 							+ e.getEstado());
 	}
 	
-	@SuppressWarnings("unchecked")
+	
 	void setObjectData(final MaterialDataTable<Empreendedor> dataTable, final boolean withRender, final int rows,
 			final int columns, final Random random) {
 		
+		final Column<Empreendedor> column__name = new Column<>();
+		column__name.setTitle("Nome");
+		column__name.setWidth("calc(100% - 468px)");
+		
+		final Column<Empreendedor> column__nivel = new Column<>();
+		column__nivel.setTitle("Nível");
+		column__nivel.setWidth("188px");
+		
+		final Column<Empreendedor> column__media = new Column<>();
+		column__media.setTitle("Media");
+		column__media.setWidth("96px");
+		
+		final Column<Empreendedor> column__tempo = new Column<>();
+		column__tempo.setTitle("Tempo");
+		column__tempo.setWidth("68px");
+		
+		final Column<Empreendedor> column__estado = new Column<>();
+		column__estado.setTitle("Estado");
+		column__estado.setWidth("68px");
+		
 		if (withRender) {
-			dataTable.setColumns(checkboxColumn(),
-					column("Nome", "calc(100% - 468px)",
-							(data, type, row_data, row, column) -> row_data.getNome()),
-					column("Nível", "188px", (data, type, row_data, row, column) -> {
-						switch (type) {
-							case SORT:
-								return row_data.getNivel();
-							default:
-								return row_data.getNivel().substring(3);
-						}
-					}),
-					column("Media", "96px",
-							(data, type, row_data, row, column) -> String.valueOf(row_data.getMedia())),
-					column("Tempo", "68px",
-							(data, type, row_data, row, column) -> String.valueOf(row_data.getTempo())),
-					column("Estado", "68px", (data, type, row_data, row, column) -> row_data.getEstado()));
-		} else {
-			dataTable.setColumns(column("Nome", "calc(100% - 420px)"), column("Nível", "188px"),
-					column("Media", "96px"), column("Tempo", "68px"), column("Estado", "68px"));
+			column__name.setRender((data, type, row_data, row, column) -> row_data.getNome());
+			column__nivel.setRender((data, type, row_data, row, column) -> {
+				switch (type) {
+					case SORT:
+						return row_data.getNivel();
+					default:
+						return row_data.getNivel().substring(3);
+				}
+			});
+			column__media.setRender((data, type, row_data, row, column) -> row_data.getMedia());
+			column__tempo.setRender((data, type, row_data, row, column) -> row_data.getTempo());
+			column__estado.setRender((data, type, row_data, row, column) -> row_data.getEstado());
 		}
 		
+		final DataTableOptions options = new DataTableOptions();
+		options.setColumns(column__name, column__nivel, column__media, column__tempo, column__estado);
+		
+		dataTable.setOptions(options);
+				/*
 		TimerHelper.schedule(100, () -> {
 			
 			final long start = System.currentTimeMillis();
@@ -117,30 +133,7 @@ public class DataTableDemo extends Composite {
 			Console.log("Create objects: " + (end - start) + "ms");
 			Console.log("Draw objects: " + (end_2 - start_2) + "ms");
 		});
-		
-	}
-	
-	MaterialDataTableColumn<Empreendedor> column(final String title, final String width) {
-		return column(title, width, null);
-	}
-	
-	MaterialDataTableColumn<Empreendedor> column(final String title, final String width,
-			final MaterialDataTableColumn.Render<Empreendedor> render) {
-		final MaterialDataTableColumn<Empreendedor> column = new MaterialDataTableColumn<>();
-		column.setTitle(title);
-		column.setWidth(width);
-		column.setRender(render);
-		return column;
-	}
-	
-	MaterialDataTableColumn<Empreendedor> checkboxColumn() {
-		final MaterialDataTableColumn<Empreendedor> column = new MaterialDataTableColumn<>();
-		column.setWidth("48px");
-		column.setClassName(CssName.MDC_DATA_TABLE__SELECT__CHECKBOX);
-		column.setOrderable(false);
-		column.setSearchable(false);
-		column.setRender((data, type, row_data, row, col) -> "");
-		return column;
+		*/
 	}
 	
 	public class Empreendedor {
