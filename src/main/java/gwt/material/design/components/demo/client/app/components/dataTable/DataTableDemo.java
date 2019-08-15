@@ -14,6 +14,9 @@ import com.google.gwt.user.client.ui.Widget;
 import gwt.material.design.components.client.ui.MaterialDataTable;
 import gwt.material.design.components.client.ui.options.DataTableOptions;
 import gwt.material.design.components.client.ui.options.DataTableOptions.Column;
+import gwt.material.design.components.client.ui.options.DataTableOptions.SelectType;
+import gwt.material.design.components.client.utils.debug.Console;
+import gwt.material.design.components.client.utils.helper.TimerHelper;
 
 public class DataTableDemo extends Composite {
 	
@@ -49,8 +52,8 @@ public class DataTableDemo extends Composite {
 		final int columns = 5;
 		final Random random = new Random();
 		
-		dataTable.addSelectionHandler(event -> print(event.getValue()));
-		dataTable.addUnselectionHandler(event -> print(event.getValue()));
+		dataTable.addSelectionHandler(event -> print("Select", event.getValue()));
+		dataTable.addUnselectionHandler(event -> print("Unselect", event.getValue()));
 		// dataTable.addSelectionHandler(event ->
 		// Arrays.stream(event.getValue()).forEach(item -> GWT.log("Select" + item)));
 		
@@ -58,11 +61,11 @@ public class DataTableDemo extends Composite {
 		setObjectData(dataTable, withRender, rows, columns, random);
 	}
 	
-	void print(final Collection<Empreendedor> values) {
+	void print(final String type, final Collection<Empreendedor> values) {
 		if (values != null)
 			for (Empreendedor e : values)
 				if (e != null)
-					GWT.log("" + e.getNome() + "|" + e.getNivel() + "|" + e.getMedia() + "|" + e.getTempo() + "|"
+					GWT.log(type + ": " + e.getNome() + "|" + e.getNivel() + "|" + e.getMedia() + "|" + e.getTempo() + "|"
 							+ e.getEstado());
 	}
 	
@@ -105,11 +108,19 @@ public class DataTableDemo extends Composite {
 			column__estado.setRender((data, type, row_data, row, column) -> row_data.getEstado());
 		}
 		
+		
+		
 		final DataTableOptions options = new DataTableOptions();
 		options.setColumns(column__name, column__nivel, column__media, column__tempo, column__estado);
+		options.setSelectType(SelectType.MULTI_SHIFT);
+		options.setSelectCheckbox(true);
+		
 		
 		dataTable.setOptions(options);
-				/*
+		
+		
+		
+		
 		TimerHelper.schedule(100, () -> {
 			
 			final long start = System.currentTimeMillis();
@@ -133,7 +144,7 @@ public class DataTableDemo extends Composite {
 			Console.log("Create objects: " + (end - start) + "ms");
 			Console.log("Draw objects: " + (end_2 - start_2) + "ms");
 		});
-		*/
+		
 	}
 	
 	public class Empreendedor {
