@@ -9,6 +9,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
+import gwt.material.design.components.client.constants.BorderRadius;
 import gwt.material.design.components.client.constants.ButtonType;
 import gwt.material.design.components.client.constants.Color;
 import gwt.material.design.components.client.constants.Elevation;
@@ -146,27 +147,36 @@ public class Home extends Composite implements HasSelectionHandlers<Widget> {
 				setWidth("100%");
 				setMaxWidth("240px");
 				setMargin(4);
-				setBorderRadius("24px 8px 24px 8px");
+				setBorderRadius(BorderRadius.ROUNDED);
 				setBorderWidth(1);
 				setBorderStyle(BorderStyle.SOLID);
 				setBorderColor(Color.MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND);
 				setElevation(Elevation.Z_0);
 				setPaddingTop(16);
 
-				final MaterialLabel label = new MaterialLabel(title);
-				label.setTypography(Typography.HEADLINE_6);
-				label.setMargin(16);
-				addContent(label);
-
-				final MaterialButton button = new MaterialButton();
-				button.setText("See");
-				button.setType(ButtonType.OUTLINE);
-				button.setMarginLeft(8);
-				button.addClickHandler(handler);
-				addButtons(button);
+				
 			}
 		};
 
+		card.setAnimation("var(--mdc-animation--expand)");
+		card.setColor(Color.MDC_THEME_ON_PRIMARY);
+		card.setButtonColor(Color.MDC_THEME_ON_PRIMARY);
+		card.setButtonTextColor(Color.MDC_THEME_ON_PRIMARY);
+		card.setIconColor(Color.MDC_THEME_ON_PRIMARY);
+		card.setBackgroundColor(Color.MDC_THEME_PRIMARY);
+		
+		final MaterialLabel label = new MaterialLabel(title);
+		label.setTypography(Typography.HEADLINE_6);
+		label.setMargin(16);
+		card.addContent(label);
+		
+		final MaterialButton button = new MaterialButton();
+		button.setText("See");
+		button.setType(ButtonType.OUTLINE);
+		button.setMarginLeft(8);
+		button.addClickHandler(handler);
+		card.addButtons(button);
+		
 		return card;
 	}
 }
