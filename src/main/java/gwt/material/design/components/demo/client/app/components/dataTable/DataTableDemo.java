@@ -211,12 +211,19 @@ public class DataTableDemo extends Composite {
 	}
 	
 	@UiHandler("add_row__act")
-	void addRow(final ClickEvent event) {
-		
+	void addRow(final ClickEvent event) {		
 		final Random random = new Random();
 		dataTable.addData(new Empreendedor("_" + column_0[random.nextInt(column_0.length)] + " Dynamic",
 				column_1[random.nextInt(column_1.length)], column_2[random.nextInt(column_2.length)],
 				column_3[random.nextInt(column_3.length)], column_4[random.nextInt(column_4.length)]));
 		
 	}
+	
+	@UiHandler("delete_row__act")
+	void remove(final ClickEvent event) {		
+		//dataTable.delete(dataTable.getData(0).iterator().next());
+		//dataTable.delete(0);
+		dataTable.deleteSelection();		
+	}
+	
 }

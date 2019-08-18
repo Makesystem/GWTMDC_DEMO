@@ -27,6 +27,9 @@
 					<m:button>
 						<m:MaterialIconButton ui:field="add_row__act" type="ADD" color="MDC_THEME_ON_SURFACE"/>
 					</m:button>
+					<m:button>
+						<m:MaterialIconButton ui:field="delete_row__act" type="DELETE" color="MDC_THEME_ON_SURFACE"/>
+					</m:button>
 				</m:MaterialDataTable>
 			</m:MaterialLayoutCell>
 		</m:MaterialLayoutInner>
