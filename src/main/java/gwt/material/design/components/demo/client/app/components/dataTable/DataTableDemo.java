@@ -16,7 +16,6 @@ import gwt.material.design.components.client.ui.options.DataTableOptions;
 import gwt.material.design.components.client.ui.options.DataTableOptions.Column;
 import gwt.material.design.components.client.ui.options.DataTableOptions.SelectType;
 import gwt.material.design.components.client.utils.debug.Console;
-import gwt.material.design.components.client.utils.helper.TimerHelper;
 
 public class DataTableDemo extends Composite {
 	
@@ -48,7 +47,7 @@ public class DataTableDemo extends Composite {
 		super.onLoad();
 		
 		final boolean withRender = true;
-		final int rows = 10;
+		final int rows = 1000;
 		final int columns = 5;
 		final Random random = new Random();
 		
@@ -72,6 +71,9 @@ public class DataTableDemo extends Composite {
 	
 	void setObjectData(final MaterialDataTable<Empreendedor> dataTable, final boolean withRender, final int rows,
 			final int columns, final Random random) {
+		
+		populate(rows, random);
+		dataTable.select(dataTable.getData().iterator().next());
 		
 		final Column<Empreendedor> column__name = new Column<>();
 		column__name.setTitle("Nome");
@@ -115,36 +117,33 @@ public class DataTableDemo extends Composite {
 		options.setSelectType(SelectType.MULTI_SHIFT);
 		options.setSelectCheckbox(true);
 		
-		
 		dataTable.setOptions(options);
 		
+		// TimerHelper.schedule(100, () -> populate(rows, random));
 		
+	}
+	
+	void populate(final int rows, final Random random) {
+		final long start = System.currentTimeMillis();
 		
+		final Empreendedor[] data = new Empreendedor[rows];
 		
-		TimerHelper.schedule(100, () -> {
-			
-			final long start = System.currentTimeMillis();
-			
-			final Empreendedor[] data = new Empreendedor[rows];
-			
-			for (int r = 0; r < rows; r++) {
-				data[r] = new Empreendedor(column_0[random.nextInt(column_0.length)],
-						column_1[random.nextInt(column_1.length)], column_2[random.nextInt(column_2.length)],
-						column_3[random.nextInt(column_3.length)], column_4[random.nextInt(column_4.length)]);
-			}
-			
-			final long end = System.currentTimeMillis();
-			
-			final long start_2 = System.currentTimeMillis();
-			
-			dataTable.setData(data);
-			
-			final long end_2 = System.currentTimeMillis();
-			
-			Console.log("Create objects: " + (end - start) + "ms");
-			Console.log("Draw objects: " + (end_2 - start_2) + "ms");
-		});
+		for (int r = 0; r < rows; r++) {
+			data[r] = new Empreendedor(column_0[random.nextInt(column_0.length)],
+					column_1[random.nextInt(column_1.length)], column_2[random.nextInt(column_2.length)],
+					column_3[random.nextInt(column_3.length)], column_4[random.nextInt(column_4.length)]);
+		}
 		
+		final long end = System.currentTimeMillis();
+		
+		final long start_2 = System.currentTimeMillis();
+		
+		dataTable.setData(data);
+		
+		final long end_2 = System.currentTimeMillis();
+		
+		Console.log("Create objects: " + (end - start) + "ms");
+		Console.log("Draw objects: " + (end_2 - start_2) + "ms");
 	}
 	
 	public class Empreendedor {
@@ -220,10 +219,17 @@ public class DataTableDemo extends Composite {
 	}
 	
 	@UiHandler("delete_row__act")
-	void remove(final ClickEvent event) {		
+	void removeRow(final ClickEvent event) {		
 		//dataTable.delete(dataTable.getData(0).iterator().next());
 		//dataTable.delete(0);
 		dataTable.deleteSelection();		
+	}
+	
+	@UiHandler("select_row__act")
+	void selectRow(final ClickEvent event) {		
+		//dataTable.delete(dataTable.getData(0).iterator().next());
+		//dataTable.delete(0);
+		dataTable.select(dataTable.getData(0).iterator().next());		
 	}
 	
 }

@@ -30,6 +30,9 @@
 					<m:button>
 						<m:MaterialIconButton ui:field="delete_row__act" type="DELETE" color="MDC_THEME_ON_SURFACE"/>
 					</m:button>
+					<m:button>
+						<m:MaterialIconButton ui:field="select_row__act" type="SELECT_ALL" color="MDC_THEME_ON_SURFACE"/>
+					</m:button>
 				</m:MaterialDataTable>
 			</m:MaterialLayoutCell>
 		</m:MaterialLayoutInner>
