@@ -129,9 +129,13 @@ public class DataTableDemo extends Composite {
 		final Empreendedor[] data = new Empreendedor[rows];
 		
 		for (int r = 0; r < rows; r++) {
-			data[r] = new Empreendedor(column_0[random.nextInt(column_0.length)],
-					column_1[random.nextInt(column_1.length)], column_2[random.nextInt(column_2.length)],
-					column_3[random.nextInt(column_3.length)], column_4[random.nextInt(column_4.length)]);
+			data[r] = new Empreendedor(
+					column_0[random.nextInt(column_0.length)],
+					column_1[random.nextInt(column_1.length)], 
+					column_2[random.nextInt(column_2.length)],
+					column_3[random.nextInt(column_3.length)], 
+					column_4[random.nextInt(column_4.length)]
+			);
 		}
 		
 		final long end = System.currentTimeMillis();
