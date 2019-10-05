@@ -62,13 +62,12 @@ public class GWTMDCDemo implements EntryPoint {
 		var public_ip = null;
 
 		$wnd.jQuery.ajax({
-			jsonp : 'jsonp',
-			dataType : 'jsonp',
-			url : 'http://myexternalip.com/json',
+			type: 'GET',
+			dataType : 'text',
+			url : 'https://www.myexternalip.com/raw',
 			async : false,
 			success : function(myip) {
 				public_ip = myip;
-				console.log('aqui: ' + myip);
 			}
 		});
 
