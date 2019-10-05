@@ -30,9 +30,9 @@ public class GWTMDCDemo implements EntryPoint {
 		GWT.log("Has: " + hasScript(api));
 		injectScript(src);
 		GWT.log("Has: " + hasScript(api));
-		
+
 		GWT.log("IP: " + publicIp());
-		
+
 		removeScript(src);
 		GWT.log("Has: " + hasScript(api));
 	}
@@ -57,16 +57,18 @@ public class GWTMDCDemo implements EntryPoint {
 	}-*/;
 
 	native String publicIp()/*-{
+
 		var url = "http://checkip.amazonaws.com";
 		var public_ip = null;
 
 		$wnd.jQuery.ajax({
-			url : url,
-			type: 'GET',
-			async: false,
-			dataType: 'TEXT',
-			success : function(result) {
-				public_ip = result;
+			jsonp : 'jsonp',
+			dataType : 'jsonp',
+			url : 'http://myexternalip.com/json',
+			async : false,
+			success : function(myip) {
+				public_ip = myip;
+				console.log('aqui: ' + myip);
 			}
 		});
 
