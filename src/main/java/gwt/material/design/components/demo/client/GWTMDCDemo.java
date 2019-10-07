@@ -3,6 +3,7 @@ package gwt.material.design.components.demo.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.LocaleInfo;
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 
 import gwt.material.design.components.client.theme.MaterialThemes;
@@ -24,54 +25,14 @@ public class GWTMDCDemo implements EntryPoint {
 
 		GWT.log("Current Locale: " + LocaleInfo.getCurrentLocale().getLocaleName());
 
-		final String api = "ajax.googleapis.com/ajax/libs/jquery";
-		final String src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js";
+		final String SPLITTER = "\\{s\\}|\\{i\\}|\\{c\\}|\\{b\\}|\\{hex\\}|\\{sec\\}|\\{ms\\}|\\{d\\}|\\{t\\}|\\{dt\\}";
+		
+		final String test = "Teste {s} aqui {d} ali";
+		GWT.log(SPLITTER);
+        for(String p : test.split(SPLITTER))
+        	GWT.log(p);
+        
 
-		GWT.log("Has: " + hasScript(api));
-		injectScript(src);
-		GWT.log("Has: " + hasScript(api));
-
-		GWT.log("IP: " + publicIp());
-
-		removeScript(src);
-		GWT.log("Has: " + hasScript(api));
 	}
-
-	native boolean hasScript(final String src)/*-{
-		return document.querySelector('script[src*="' + src + '"]') ? true
-				: false;
-	}-*/;
-
-	native void injectScript(final String src)/*-{
-		var head = document.getElementsByTagName('head')[0];
-		var script = document.createElement('script');
-		script.type = 'text/javascript';
-		script.src = src;
-		head.appendChild(script);
-	}-*/;
-
-	native void removeScript(final String src)/*-{
-		var script = document.querySelector('script[src*="' + src + '"]');
-		if (script)
-			script.remove();
-	}-*/;
-
-	native String publicIp()/*-{
-
-		var url = "http://checkip.amazonaws.com";
-		var public_ip = null;
-
-		$wnd.jQuery.ajax({
-			type: 'GET',
-			dataType : 'text',
-			url : 'https://www.myexternalip.com/raw',
-			async : false,
-			success : function(myip) {
-				public_ip = myip;
-			}
-		});
-
-		return public_ip;
-	}-*/;
 
 }

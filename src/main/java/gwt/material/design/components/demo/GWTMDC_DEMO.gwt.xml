@@ -7,6 +7,7 @@
 
   <!-- Other module inherits                                      -->
   <inherits name='gwt.material.design.components.GwtMDC'/>
+  <inherits name="com.makesystem.pidgey.Pidgey" />
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='gwt.material.design.components.demo.client.GWTMDCDemo'/>
