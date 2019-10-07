@@ -1,10 +1,13 @@
 package gwt.material.design.components.demo.client;
 
+import java.util.Date;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.makesystem.pidgey.console.Console;
 
 import gwt.material.design.components.client.theme.MaterialThemes;
 import gwt.material.design.components.client.theme.ThemeManager;
@@ -23,15 +26,8 @@ public class GWTMDCDemo implements EntryPoint {
 		// ThemeManager.applyTheme(IResources.INSTANCE.theme());
 		// ThemeManager.applyTheme(MaterialThemes.INSTANCE.dark_amber());
 
-		GWT.log("Current Locale: " + LocaleInfo.getCurrentLocale().getLocaleName());
-
-		final String SPLITTER = "\\{s\\}|\\{i\\}|\\{c\\}|\\{b\\}|\\{hex\\}|\\{sec\\}|\\{ms\\}|\\{d\\}|\\{t\\}|\\{dt\\}";
-		
-		final String test = "Teste {s} aqui {d} ali";
-		GWT.log(SPLITTER);
-        for(String p : test.split(SPLITTER))
-        	GWT.log(p);
-        
+		Console.log("Current Locale: {dt}", new Date());
+		Console.log("Current Locale: {s}", LocaleInfo.getCurrentLocale().getLocaleName());
 
 	}
 

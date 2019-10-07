@@ -88,7 +88,7 @@
 		<dependency>
 			<groupId>com.github.Makesystem</groupId>
 			<artifactId>Pidgey</artifactId>
-			<version>b06266f1d9</version>
+			<version>6f61ffb87b</version>
 		</dependency>
 
 	</dependencies>
