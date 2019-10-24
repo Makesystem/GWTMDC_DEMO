@@ -1,6 +1,7 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui">
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:gwt.material.design.components.client.ui">
 
 	<ui:with field='vMaskers'
 		type='gwt.material.design.components.client.masker.Masker.Defaults' />
@@ -15,14 +16,16 @@
 	<m:MaterialLayoutGrid>
 		<m:MaterialLayoutInner>
 
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN"
-				marginBottom="24">
-				<m:MaterialLabel text="Tab Bar" typography="HEADLINE_6" />
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN" marginBottom="24">
+				<m:MaterialLabel text="Tab Bar"
+					typography="HEADLINE_6" />
 				<m:MaterialDivider />
 			</m:MaterialLayoutCell>
 
 			<!-- Standard -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
 				<m:MaterialLabel text="Standard" typography="BODY_1" />
 			</m:MaterialLayoutCell>
 
@@ -35,9 +38,10 @@
 			</m:MaterialLayoutCell>
 
 			<!-- Icons -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
-				<m:MaterialLabel text="Tabs with icons next to labels"
-					typography="BODY_1" />
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel
+					text="Tabs with icons next to labels" typography="BODY_1" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell cols="12">
@@ -49,7 +53,8 @@
 			</m:MaterialLayoutCell>
 
 			<!-- Stacked icons -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
 				<m:MaterialLabel
 					text="Tabs with icons above labels and indicators restricted to content"
 					typography="BODY_1" />
@@ -59,15 +64,33 @@
 				<m:MaterialTabBar>
 					<m:MaterialTab text="Recents" icon="SCHEDULE"
 						stacked="true" />
-					<m:MaterialTab text="Nearby" icon="NEAR_ME" stacked="true" />
+					<m:MaterialTab text="Nearby" icon="NEAR_ME"
+						stacked="true" />
 					<m:MaterialTab text="Favorites" icon="FAVORITE"
 						stacked="true" />
 				</m:MaterialTabBar>
 			</m:MaterialLayoutCell>
 
+			<!-- Only icons -->
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Tabs only with icons"
+					typography="BODY_1" />
+			</m:MaterialLayoutCell>
+
+			<m:MaterialLayoutCell cols="12">
+				<m:MaterialTabBar>
+					<m:MaterialTab icon="SCHEDULE" />
+					<m:MaterialTab icon="NEAR_ME" />
+					<m:MaterialTab icon="FAVORITE" />
+				</m:MaterialTabBar>
+			</m:MaterialLayoutCell>
+
 			<!-- Scrolling tabs -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
-				<m:MaterialLabel text="Scrolling tabs" typography="BODY_1" />
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Scrolling tabs"
+					typography="BODY_1" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell cols="12">
@@ -88,8 +111,10 @@
 			</m:MaterialLayoutCell>
 
 			<!-- Start -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
-				<m:MaterialLabel text="Align Start" typography="BODY_1" />
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Align Start"
+					typography="BODY_1" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell cols="12">
@@ -101,8 +126,10 @@
 			</m:MaterialLayoutCell>
 
 			<!-- Center -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
-				<m:MaterialLabel text="Align Center" typography="BODY_1" />
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Align Center"
+					typography="BODY_1" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell cols="12">
@@ -114,8 +141,10 @@
 			</m:MaterialLayoutCell>
 
 			<!-- End -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
-				<m:MaterialLabel text="Align End" typography="BODY_1" />
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+				<m:MaterialLabel text="Align End"
+					typography="BODY_1" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell cols="12">
@@ -127,10 +156,11 @@
 			</m:MaterialLayoutCell>
 
 			<!-- To Do Tests -->
-			<m:MaterialLayoutCell cols="12" flexDirection="COLUMN">
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
 				<m:MaterialDivider />
-				<m:MaterialLabel text="Do your tests" typography="BODY_1"
-					marginTop="16" />
+				<m:MaterialLabel text="Do your tests"
+					typography="BODY_1" marginTop="16" />
 			</m:MaterialLayoutCell>
 
 			<m:MaterialLayoutCell flexDirection="COLUMN"
@@ -143,7 +173,7 @@
 					text="Stacked" />
 			</m:MaterialLayoutCell>
 			<m:MaterialLayoutCell flexDirection="COLUMN"
-				cols="4">			
+				cols="4">
 				<m:MaterialSelect ui:field="align_select"
 					label="Align" width="100%" marginBottom="16" />
 			</m:MaterialLayoutCell>

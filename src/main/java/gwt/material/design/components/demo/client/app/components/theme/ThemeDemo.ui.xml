@@ -23,6 +23,20 @@
 				<m:MaterialDivider />
 			</m:MaterialLayoutCell>
 
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+			
+				<m:MaterialThemeEditor />
+				
+			</m:MaterialLayoutCell>
+			
+			<m:MaterialLayoutCell cols="12"
+				flexDirection="COLUMN">
+			
+				<m:MaterialColorPalette />
+				
+			</m:MaterialLayoutCell>
+
 			<!-- Font size -->
 			<m:MaterialLayoutCell cols="12"
 				flexDirection="COLUMN">
