@@ -30,7 +30,7 @@ public class GWTMDCDemo implements EntryPoint {
 		Console.log("Current Locale: {cc}{s}", ConsoleColor.BLUE, LocaleInfo.getCurrentLocale().getLocaleName());
 		
 		RootPanel.get().add(new DemoApp());
-		ThemeManager.applyTheme(MaterialThemes.INSTANCE.dark_amber());
+		ThemeManager.applyTheme(MaterialThemes.INSTANCE.dark__ligth_blue());
 		// ThemeManager.applyTheme(IResources.INSTANCE.theme());
 		
 		
