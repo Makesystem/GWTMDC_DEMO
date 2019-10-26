@@ -43,7 +43,6 @@ import gwt.material.design.components.demo.client.app.components.chart.pie.Chart
 import gwt.material.design.components.demo.client.app.components.checkBox.CheckboxDemo;
 import gwt.material.design.components.demo.client.app.components.chip.ChipDemo;
 import gwt.material.design.components.demo.client.app.components.circularProgress.CircularProgressDemo;
-import gwt.material.design.components.demo.client.app.components.colorChooser.ColorChooser;
 import gwt.material.design.components.demo.client.app.components.dataTable.DataTableDemo;
 import gwt.material.design.components.demo.client.app.components.datePicker.DatePickerDemo;
 import gwt.material.design.components.demo.client.app.components.dialog.DialogDemo;
@@ -92,8 +91,6 @@ public class DemoApp extends Composite {
 	MaterialList items_list;
 	@UiField
 	MaterialSideSheet side_sheet;
-	@UiField
-	ColorChooser color_chooser;
 	@UiField
 	MaterialContent content;
 
@@ -157,17 +154,11 @@ public class DemoApp extends Composite {
 
 	@UiHandler("download_act")
 	void onDownload(final ClickEvent event) {
-		color_chooser.download();
 	}
 
 	@UiHandler("filter_action")
 	void onToggleSideSheet(final ClickEvent event) {
 		side_sheet.setOpen(!side_sheet.isOpen());
-	}
-
-	@UiHandler("color_chooser")
-	void onCloseSideSheet(final ClickEvent event) {
-		side_sheet.close();
 	}
 
 	@UiHandler("home")

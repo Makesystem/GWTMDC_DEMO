@@ -55,8 +55,6 @@
 			</m:MaterialContent>
 
 			<m:MaterialSideSheet ui:field="side_sheet">
-				<demo:colorChooser.ColorChooser
-					ui:field="color_chooser" />
 			</m:MaterialSideSheet>
 
 		</m:MaterialDrawerAppContent>
