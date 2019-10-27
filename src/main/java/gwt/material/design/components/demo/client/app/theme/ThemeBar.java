@@ -3,8 +3,8 @@ package gwt.material.design.components.demo.client.app.theme;
 import java.util.stream.IntStream;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -38,48 +38,72 @@ public class ThemeBar extends Composite {
 	@UiField
 	MaterialColorPalette palette;
 
-	ThemeProperty colorProperty;
-	
-	final Theme theme = new Theme((property, value) -> StyleHelper.setCssProperty(property.getCssName(), value));
+	ThemeProperty colorSetting;
+	ThemeProperty onColorSetting;
+
+	private final Theme theme;
 
 	public ThemeBar() {
 		initWidget(uiBinder.createAndBindUi(this));
-		sub_bar.toggle();
-		hide(colors_bar.getElement());
+		this.theme = new Theme((property, value) -> StyleHelper.setCssProperty(property.getCssName(), value));
+		this.sub_bar.jQuery().hide();
+		this.colors_bar.jQuery().hide();
+	}
+
+	@UiHandler("palette")
+	void onSelectColor(final ValueChangeEvent<Color> event) {
+
+		final Color color = event.getValue();
+
+		switch (colorSetting) {
+		case MDC_THEME_PRIMARY:
+		case MDC_THEME_SECONDARY:
+		case MDC_THEME_SURFACE:
+		case MDC_THEME_BACKGROUND:
+		case MDC_THEME_SUCCESS:
+		case MDC_THEME_WARNING:
+		case MDC_THEME_ERROR:
+			theme.setColor(colorSetting, color);
+			break;
+		default:
+			theme.set(colorSetting, color);
+			theme.set(onColorSetting, color.onColor());
+			break;
+		}
 	}
 
 	@UiHandler("colors__act")
 	void onColorsAct(final ClickEvent event) {
-		sub_bar.toggle();
-
-		setColorsActs();
+		this.sub_bar.jQuery().toggle();
+		this.setColorsActs();
 	}
 
 	@UiHandler("close_colors_bars__act")
 	void onCloseColorsAct(final ClickEvent event) {
-		hide(colors_bar.getElement());
+		this.colors_bar.jQuery().hide();
 	}
 
 	void setColorsActs() {
 
 		sub_bar.clear();
 
-		final MaterialRadioButton primaryAct = getAction(Color.MDC_THEME_ON_PRIMARY, Color.MDC_THEME_PRIMARY,
-				"Primary");
+		final MaterialRadioButton primaryAct = getAction(ThemeProperty.MDC_THEME_ON_PRIMARY,
+				ThemeProperty.MDC_THEME_PRIMARY, "Primary");
 		primaryAct.setSelected(true);
 
-		final MaterialRadioButton secondaryAct = getAction(Color.MDC_THEME_ON_SECONDARY, Color.MDC_THEME_SECONDARY,
-				"Secondary");
-		final MaterialRadioButton surfaceAct = getAction(Color.MDC_THEME_ON_SURFACE, Color.MDC_THEME_SURFACE,
-				"Surface");
-		final MaterialRadioButton backgroundAct = getAction(Color.MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND,
-				Color.MDC_THEME_BACKGROUND, "Background");
+		final MaterialRadioButton secondaryAct = getAction(ThemeProperty.MDC_THEME_ON_SECONDARY,
+				ThemeProperty.MDC_THEME_SECONDARY, "Secondary");
+		final MaterialRadioButton surfaceAct = getAction(ThemeProperty.MDC_THEME_ON_SURFACE,
+				ThemeProperty.MDC_THEME_SURFACE, "Surface");
+		final MaterialRadioButton backgroundAct = getAction(ThemeProperty.MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND,
+				ThemeProperty.MDC_THEME_BACKGROUND, "Background");
 
-		final MaterialRadioButton successAct = getAction(Color.MDC_THEME_ON_SUCCESS, Color.MDC_THEME_SUCCESS,
-				"Success");
-		final MaterialRadioButton warningAct = getAction(Color.MDC_THEME_ON_WARNING, Color.MDC_THEME_WARNING,
-				"Warning");
-		final MaterialRadioButton errorAct = getAction(Color.MDC_THEME_ON_ERROR, Color.MDC_THEME_ERROR, "Error");
+		final MaterialRadioButton successAct = getAction(ThemeProperty.MDC_THEME_ON_SUCCESS,
+				ThemeProperty.MDC_THEME_SUCCESS, "Success");
+		final MaterialRadioButton warningAct = getAction(ThemeProperty.MDC_THEME_ON_WARNING,
+				ThemeProperty.MDC_THEME_WARNING, "Warning");
+		final MaterialRadioButton errorAct = getAction(ThemeProperty.MDC_THEME_ON_ERROR, ThemeProperty.MDC_THEME_ERROR,
+				"Error");
 
 		sub_bar.add(primaryAct);
 		sub_bar.add(secondaryAct);
@@ -97,14 +121,18 @@ public class ThemeBar extends Composite {
 		final ThemeProperty[] chartist_series = ThemeProperty.chartistSeries();
 		final ThemeProperty[] chartist_labels = ThemeProperty.chartistLabels();
 		IntStream.range(0, chartist_series.length)
-				.forEach(index -> sub_bar.add(getAction(var(chartist_labels[index].getCssName()),
-						var(chartist_series[index].getCssName()),
+				.forEach(index -> sub_bar.add(getAction(chartist_labels[index], chartist_series[index],
 						"Serie " + chartist_series[index].getCssName().replace("--mdc-chartist--series_", ""))));
 
 	}
 
-	MaterialRadioButton getAction(final Color color, final Color background, final String tooltip) {
-		return getAction(color.getCssName(), background.getCssName(), tooltip);
+	MaterialRadioButton getAction(final ThemeProperty onColor, final ThemeProperty color, final String tooltip) {
+		final MaterialRadioButton radio = getAction(var(onColor.getCssName()), var(color.getCssName()), tooltip);
+		radio.addClickHandler(event -> {
+			colorSetting = color;
+			onColorSetting = onColor;
+		});
+		return radio;
 	}
 
 	MaterialRadioButton getAction(final String color, final String background, final String tooltip) {
@@ -115,8 +143,7 @@ public class ThemeBar extends Composite {
 		material_icon.setCssProperty("background-color", background);
 		material_icon.setTooltip(tooltip);
 		material_icon.setTooltipPosition(TooltipPosition.LEFT);
-
-		material_icon.addClickHandler(event -> show(colors_bar.getElement()));
+		material_icon.addClickHandler(event -> colors_bar.jQuery().show());
 
 		return material_icon;
 	}
@@ -134,11 +161,4 @@ public class ThemeBar extends Composite {
 		return "var(" + property + ")";
 	}
 
-	public native void show(final Element element) /*-{
-		$wnd.jQuery(element).show();
-	}-*/;
-
-	public native void hide(final Element element) /*-{
-		$wnd.jQuery(element).hide();
-	}-*/;
 }
