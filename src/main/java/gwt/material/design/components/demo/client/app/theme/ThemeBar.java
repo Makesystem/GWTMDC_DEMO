@@ -19,6 +19,7 @@ import gwt.material.design.components.client.theme.Theme;
 import gwt.material.design.components.client.ui.MaterialColorPalette;
 import gwt.material.design.components.client.ui.MaterialRadioButton;
 import gwt.material.design.components.client.ui.html.Div;
+import gwt.material.design.components.client.utils.helper.JsHelper;
 import gwt.material.design.components.client.utils.helper.StyleHelper;
 
 public class ThemeBar extends Composite {
@@ -49,6 +50,11 @@ public class ThemeBar extends Composite {
 		this.sub_bar.jQuery().hide();
 		this.colors_bar.jQuery().hide();
 	}
+	
+	@UiHandler("download__act")
+	void onDownload(final ClickEvent event) {
+		JsHelper.cssDownload("mdc_theme.css", theme.toString());
+	}
 
 	@UiHandler("palette")
 	void onSelectColor(final ValueChangeEvent<Color> event) {
@@ -63,7 +69,7 @@ public class ThemeBar extends Composite {
 		case MDC_THEME_SUCCESS:
 		case MDC_THEME_WARNING:
 		case MDC_THEME_ERROR:
-			theme.setColor(colorSetting, color);
+			theme.setGroup(colorSetting, color);
 			break;
 		default:
 			theme.set(colorSetting, color);

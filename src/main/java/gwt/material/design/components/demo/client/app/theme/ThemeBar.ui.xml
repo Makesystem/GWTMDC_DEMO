@@ -10,34 +10,45 @@
 		type='gwt.material.design.components.client.validation.ValidationForTextField' />
 
 	<ui:style>
-		.bar {
-			width: 40px;
-			height: calc(100% - 16px);
-			padding: 8px 2px 8px 2px;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-content: center;
-			align-items: center;
-			border-left: 1px solid rgba(127, 127, 127, .25);
-			overflow-y: auto; 
-		}		
+	.bar {
+		width: 40px;
+		height: calc(100% - 16px);
+		padding: 8px 2px 8px 2px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-content: center;
+		align-items: center;
+		border-left: 1px solid rgba(127, 127, 127, .25);
+		overflow-y: auto;
+	}
 	</ui:style>
 
 	<m:html.Div height="100vh" display="FLEX">
-		
-		<m:html.Div ui:field="colors_bar" addStyleNames="{style.bar}" width="auto" flexJustifyContent="START">
-			<m:MaterialIconButton ui:field="close_colors_bars__act" type="CLOSE" color="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND" />
+
+		<m:html.Div ui:field="colors_bar"
+			addStyleNames="{style.bar}" width="auto" flexJustifyContent="START">
+			<m:MaterialIconButton
+				ui:field="close_colors_bars__act" type="CLOSE"
+				color="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND" />
 			<m:MaterialColorPalette ui:field="palette" />
 		</m:html.Div>
-		
+
 		<m:html.Div ui:field="sub_bar" addStyleNames="{style.bar}">
 		</m:html.Div>
-		
+
 		<m:html.Div ui:field="bar" addStyleNames="{style.bar}">
-			<m:MaterialIconButton ui:field="colors__act" type="PALETTE" color="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND" width="28px" height="28px" margin="2"/>
+			<m:MaterialIconButton ui:field="colors__act"
+				type="PALETTE" color="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND"
+				width="28px" height="28px" margin="2" />
+			<m:html.Div flex="ONE" width="100%" display="FLEX"
+				flexDirection="COLUMN" flexJustifyContent="END">
+				<m:MaterialIconButton ui:field="download__act"
+					type="FILE_DOWNLOAD" color="MDC_THEME_TEXT_PRIMARY_ON_BACKGROUND"
+					width="28px" height="28px" margin="2" />
+			</m:html.Div>
 		</m:html.Div>
-		
+
 	</m:html.Div>
 
 </ui:UiBinder> 
