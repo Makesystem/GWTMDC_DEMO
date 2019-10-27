@@ -1,7 +1,8 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui" xmlns:m="urn:import:gwt.material.design.components.client.ui"
-	xmlns:demo="urn:import:gwt.material.design.components.demo.client.app.components">
+	xmlns:demo="urn:import:gwt.material.design.components.demo.client.app.components"
+	xmlns:theme="urn:import:gwt.material.design.components.demo.client.app.theme">
 	<ui:style>
 	
 	</ui:style>
@@ -58,6 +59,8 @@
 			</m:MaterialSideSheet>
 
 		</m:MaterialDrawerAppContent>
+
+		<theme:ThemeBar />
 
 	</m:MaterialContent>
 
