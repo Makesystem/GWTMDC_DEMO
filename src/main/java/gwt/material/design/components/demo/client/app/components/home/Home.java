@@ -159,11 +159,6 @@ public class Home extends Composite implements HasSelectionHandlers<Widget> {
 		};
 
 		card.setAnimation("var(--mdc-animation--expand)");
-		card.setColor(Color.MDC_THEME_ON_PRIMARY);
-		card.setButtonColor(Color.MDC_THEME_ON_PRIMARY);
-		card.setButtonTextColor(Color.MDC_THEME_ON_PRIMARY);
-		card.setIconColor(Color.MDC_THEME_ON_PRIMARY);
-		card.setBackgroundColor(Color.MDC_THEME_PRIMARY);
 		
 		final MaterialLabel label = new MaterialLabel(title);
 		label.setTypography(Typography.HEADLINE_6);
