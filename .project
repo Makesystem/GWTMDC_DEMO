@@ -39,4 +39,11 @@
 		<nature>com.gwtplugins.gwt.eclipse.core.gwtNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>java</name>
+			<type>2</type>
+			<location>D:/Projetos/GWTMDC/src/main/java</location>
+		</link>
+	</linkedResources>
 </projectDescription>
