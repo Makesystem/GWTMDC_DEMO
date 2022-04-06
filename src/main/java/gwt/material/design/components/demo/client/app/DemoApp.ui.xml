@@ -55,8 +55,7 @@
 				<demo:home.Home ui:field="home" />
 			</m:MaterialContent>
 
-			<m:MaterialSideSheet ui:field="side_sheet">
-			</m:MaterialSideSheet>
+			<m:MaterialSideSheet ui:field="side_sheet" />
 
 		</m:MaterialDrawerAppContent>
 

@@ -1,6 +1,7 @@
 package gwt.material.design.components.demo.client.app.components.chart;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Random;
@@ -16,7 +17,7 @@ import gwt.material.design.components.client.ui.misc.chart.helper.ChartHelper;
 public abstract class ChartBaseDemo extends Composite {
 
 	protected final ChartValueFormatter valueFormatter = value -> {
-		final BigDecimal bigDecimal = new BigDecimal(String.valueOf(value)).setScale(2, BigDecimal.ROUND_FLOOR);
+		final BigDecimal bigDecimal = new BigDecimal(String.valueOf(value)).setScale(2, RoundingMode.FLOOR);
 		final String[] values = bigDecimal.toString().split("\\.");
 
 		final StringBuilder builder = new StringBuilder(values[0]);
@@ -64,7 +65,7 @@ public abstract class ChartBaseDemo extends Composite {
 			final L label;
 
 			if (values < 2) {
-				value = (V) new Double(((Random.nextInt(90) + 10) * 100));
+				value = (V) Double.valueOf(((Random.nextInt(90) + 10) * 100));
 				label = (L) ChartHelper.alphaNumerate(i);
 			} else {
 				final Double[] vars = new Double[values];

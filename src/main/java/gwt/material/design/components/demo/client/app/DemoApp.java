@@ -99,9 +99,8 @@ public class DemoApp extends Composite {
 	}
 
 	@Override
-	protected void onLoad() {
-		super.onLoad();
-
+	protected void onLoad() {		
+		super.onLoad();		
 		items_list.add(getItem("Banner", event -> setPanel(new BannerDemo())));
 		items_list.add(getItem("Button", event -> setPanel(new ButtonDemo())));
 		items_list.add(getItem("Card", event -> setPanel(new CardDemo())));
@@ -166,10 +165,10 @@ public class DemoApp extends Composite {
 		setPanel(event.getValue());
 	}
 
-	MaterialListItem getItem(final String title, final ClickHandler handler) {
-		final MaterialListItem item = new MaterialListItem();
-		item.setText(title);
-		item.addClickHandler(handler);
+	MaterialListItem getItem(final String title, final ClickHandler handler) {		
+		final MaterialListItem item = new MaterialListItem();		
+		item.setText(title);		
+		item.addClickHandler(handler);		
 		return item;
 	}
 

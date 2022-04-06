@@ -50,7 +50,7 @@ public class ThemeBar extends Composite {
 		this.sub_bar.jQuery().hide();
 		this.colors_bar.jQuery().hide();
 	}
-	
+
 	@UiHandler("download__act")
 	void onDownload(final ClickEvent event) {
 		JsHelper.cssDownload("mdc_theme.css", theme.toString());

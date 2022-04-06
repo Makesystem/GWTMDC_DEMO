@@ -8,20 +8,25 @@
 	<groupId>gwt.material.design.components.demo</groupId>
 	<artifactId>GWTMDC_DEMO</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>gwt.material.design.components.demo.GWTMDC_DEMO</name>
 
-	<properties>
 
-		<!-- Setting maven.compiler.source to something different to 1.8 needs 
-			that you configure the sourceLevel in gwt-maven-plugin since GWT compiler 
-			2.8 requires 1.8 (see gwt-maven-plugin block below) -->
+	<properties>
+	
+		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
 
 		<!-- Don't let your Mac use a crazy non-standard encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+
+		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+		<gwt.version>2.9.0</gwt.version>
+		<gwtmdc.version>1.0.13.RELEASE</gwtmdc.version>
+
 	</properties>
 
 	<dependencyManagement>
@@ -30,7 +35,7 @@
 			<dependency>
 				<groupId>com.google.gwt</groupId>
 				<artifactId>gwt</artifactId>
-				<version>2.9.0</version>
+				<version>${gwt.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -42,8 +47,7 @@
 		<dependency>
 			<groupId>com.makesystem</groupId>
 			<artifactId>GWTMDC</artifactId>
-			<version>1.0.0.RELEASE</version>
-			<scope>compile</scope>
+			<version>${gwtmdc.version}</version>
 		</dependency>
 
 		<dependency>
@@ -82,69 +86,48 @@
 			<version>3.6</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.codehaus.plexus</groupId>
-			<artifactId>plexus-utils</artifactId>
-			<version>3.4.1</version>
-		</dependency>
-
 	</dependencies>
 
-	<build>
-		<!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" 
-			update them in DevMode -->
-		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
-
+		<build>	
 		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>3.3.2</version>
-			</plugin>
 
 			<!-- GWT Maven Plugin -->
 			<plugin>
-				<groupId>net.ltgt.gwt.maven</groupId>
+				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
-				<version>1.0-rc-8</version>
+				<version>${gwt.version}</version>
 				<executions>
 					<execution>
 						<goals>
 							<goal>compile</goal>
 							<goal>test</goal>
+							<goal>generateAsync</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
-					<moduleName>gwt.material.design.components.demo.GWTMDC_DEMO</moduleName>
-					<moduleShortName>GWTMDC_DEMO</moduleShortName>
-					<failOnError>true</failOnError>
-					<!-- GWT compiler 2.8 requires 1.8, hence define sourceLevel here if 
-						you use a different source language for java compilation -->
-					<sourceLevel>11</sourceLevel>
-					<!-- Compiler configuration -->
-					<compilerArgs>
-						<!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
-						<arg>-compileReport</arg>
-						<arg>-XcompilerMetrics</arg>
-					</compilerArgs>
-					<!-- DevMode configuration -->
-					<warDir>${project.build.directory}/${project.build.finalName}</warDir>
-					<classpathScope>compile+runtime</classpathScope>
-					<!-- URL(s) that should be opened by DevMode (gwt:devmode). -->
-					<startupUrls>
-						<startupUrl>GWTMDC_DEMO.html</startupUrl>
-					</startupUrls>
+					<runTarget>GWTMDC_DEMO.html</runTarget>
+					<hostedWebapp>${webappDirectory}</hostedWebapp>
+					<extraJvmArgs>-Xmx1024m -Xss10m</extraJvmArgs>
+					<gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
 				</configuration>
 			</plugin>
 
-			<!-- Skip normal test execution, we use gwt:test instead -->
 			<plugin>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.17</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.2</version>
+				<executions>
+					<execution>
+						<id>war-during-package</id>
+						<phase>package</phase>
+						<goals>
+							<goal>war</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<skip>true</skip>
+					<webappDirectory>${webappDirectory}</webappDirectory>
 				</configuration>
 			</plugin>
 
