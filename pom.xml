@@ -24,7 +24,7 @@
 
 
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-		<gwt.version>2.9.0</gwt.version>
+		<gwt.version>2.10.0</gwt.version>
 		<gwtmdc.version>1.0.13.RELEASE</gwtmdc.version>
 
 	</properties>
