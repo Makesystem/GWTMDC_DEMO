@@ -37,7 +37,7 @@ public class ButtonDemo extends Composite implements DemoPanel<MaterialButton> {
 	@Override
 	protected void onLoad() {
 		super.onLoad();
-	
+		
 		for (ButtonType type : ButtonType.values()) {
 			final MaterialSelect.Option<ButtonType> option = new MaterialSelect.Option<>();
 			option.setText(type.toString());
@@ -45,6 +45,7 @@ public class ButtonDemo extends Composite implements DemoPanel<MaterialButton> {
 			type_select.add(option);
 		}
 		type_select.setSelectedIndex(0, false);
+		
 	}
 	
 	@UiHandler("type_select")

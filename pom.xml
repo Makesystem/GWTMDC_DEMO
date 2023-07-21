@@ -13,7 +13,7 @@
 
 
 	<properties>
-	
+
 		<java.version>11</java.version>
 		<maven.compiler.source>11</maven.compiler.source>
 		<maven.compiler.target>11</maven.compiler.target>
@@ -33,7 +33,7 @@
 		<dependencies>
 			<!-- ensure all GWT deps use the same version (unless overridden) -->
 			<dependency>
-				<groupId>com.google.gwt</groupId>
+				<groupId>org.gwtproject</groupId>
 				<artifactId>gwt</artifactId>
 				<version>${gwt.version}</version>
 				<type>pom</type>
@@ -51,17 +51,17 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-servlet</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-user</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.google.gwt</groupId>
+			<groupId>org.gwtproject</groupId>
 			<artifactId>gwt-dev</artifactId>
 			<scope>provided</scope>
 		</dependency>
@@ -88,31 +88,45 @@
 
 	</dependencies>
 
-		<build>	
+	<build>
 		<plugins>
 
 			<!-- GWT Maven Plugin -->
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>net.ltgt.gwt.maven</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
-				<version>${gwt.version}</version>
+				<version>1.0.1</version>
 				<executions>
 					<execution>
 						<goals>
 							<goal>compile</goal>
 							<goal>test</goal>
-							<goal>generateAsync</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
-					<runTarget>GWTMDC_DEMO.html</runTarget>
-					<hostedWebapp>${webappDirectory}</hostedWebapp>
-					<extraJvmArgs>-Xmx1024m -Xss10m</extraJvmArgs>
-					<gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
+					<moduleName>gwt.material.design.components.demo.GWTMDC_DEMO</moduleName>
+					<moduleShortName>gwtmdc_demo</moduleShortName>
+					<failOnError>true</failOnError>
+					<!-- GWT compiler 2.8 requires 1.8, hence define sourceLevel here if 
+						you use a different source language for java compilation -->
+					<sourceLevel>1.8</sourceLevel>
+					<!-- Compiler configuration -->
+					<compilerArgs>
+						<!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
+						<arg>-compileReport</arg>
+						<arg>-XcompilerMetrics</arg>
+					</compilerArgs>
+					<!-- DevMode configuration -->
+					<warDir>${project.build.directory}/${project.build.finalName}</warDir>
+					<classpathScope>compile+runtime</classpathScope>
+					<!-- URL(s) that should be opened by DevMode (gwt:devmode). -->
+					<startupUrls>
+						<startupUrl>GWTMDC_DEMO.html</startupUrl>
+					</startupUrls>
 				</configuration>
 			</plugin>
-
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
