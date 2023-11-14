@@ -14,24 +14,23 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
+/.idea/
 .idea
 *.iws
 *.iml
 *.ipr
 
 ### NetBeans ###
+/nbproject/
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+/store/
 build/
 nb-configuration.xml
 nbactions.xml
 
 ### VS Code ###
 .vscode/
-
-### GWT ###
-/war/
-/gwt-unitCache/
